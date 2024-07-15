@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+
+.detail-display-flex {
+  display: flex;
+}
+
+.detail-tag-a {
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 2.2rem;
+}
+
+.detail-release-date {
+  opacity: .8;
+  font-weight: 400;
+  font-size: 2.2rem;
+}
+
+.detail-certification {
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.detail-rating {
+  border: 1px solid black;
+  border-radius: 100%;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  margin-right: 0.5rem;
+}
