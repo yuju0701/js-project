@@ -1,0 +1,35 @@
+#latest-movie-board {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* 가로 스크롤을 허용 */
+    padding: 10px;
+    gap: 20px; /* 영화 카드 사이의 간격 */
+}
+
+#popular-movie-board {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* 가로 스크롤을 허용 */
+    padding: 10px;
+    gap: 20px; /* 영화 카드 사이의 간격 */
+}
+
+.MovieInfo {
+    flex: 0 0 auto;
+    width: 200px; /* 영화 카드의 너비 */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* 영화 카드 배경 색 */
+}
+
+.MovieInfo h1 {
+    font-size: 1.2rem; /* 제목 글자 크기 */
+    margin: 10px 0; /* 위아래 여백 */
+    text-align: left; /* 제목 가운데 정렬 */
+}
+
+.MovieInfo p {
+    margin-top: auto; /* 개봉일을 아래로 밀어내기 위해 자동으로 여백을 추가합니다 */
+    font-size: 0.9rem; /* 개봉일 글자 크기 */
+}
