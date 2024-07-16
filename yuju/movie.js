@@ -39,7 +39,7 @@ const getLatestMovie = async () => {
 const latestMovieRender = (movie) => {
     const formattedDate = formatDate(movie.release_date);
     let latestHTML = `
-    <div class = "MovieInfo">
+    <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
         ${movie.poster_path ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px;">` : '<p>포스터 이미지가 없습니다.</p>'}
         <h1>${movie.title}</h1>
         <p>${formattedDate}</p>
@@ -72,7 +72,7 @@ const getPopularMovie = async () => {
 const popularMovieRender = (movie) => {
     const formattedDate = formatDate(movie.release_date);
     let popularHTML = `
-    <div class = "MovieInfo">
+    <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
         ${movie.poster_path ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px;">` : '<p>포스터 이미지가 없습니다.</p>'}
         <h1>${movie.title}</h1>
         <p>${formattedDate}</p>
@@ -156,3 +156,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     startAutoScroll();
 });
+
+
+
+// 상세페이지 열기
+const openDetailPage = (movieID) => {
+    const url = '../JeongChan/mvi_Detail.html?movieID=' + encodeURIComponent(movieID);
+    // window.location.href = url;
+    window.open(url,'_blank');
+};
