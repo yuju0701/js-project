@@ -18,7 +18,15 @@
       <img src="" id="detail-background-img" class="img-fit" />
       <div id="detail-container" class="container">
         <div>
-          <img src="" id="detail-poster-img" />
+          <button
+            type="button"
+            class="btn"
+            data-bs-toggle="modal"
+            data-bs-target="#imageModal"
+          >
+            <img src="" id="detail-poster-img" />
+          </button>
+          
         </div>
 
         <div>
@@ -42,7 +50,7 @@
 
           <div class="detail-tagline">tagline</div>
 
-          <div>개요</div>
+          <div><h4><b>개요</b></h4></div>
 
           <div class="detail-overview">overview</div>
 
@@ -95,7 +103,52 @@
           </div>
 
 
-          
+
+          <div
+            class="modal fade"
+            id="imageModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-x1">
+              <div class="modal-content detail-background-transparent">
+                <div class="modal-header detail-background-transparent">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body p-0">
+                  <div class="ratio">
+                    <section id="slider" class="detail-image-slider">
+                      <input type="radio" name="sliderImg" id="s1">
+                      <input type="radio" name="sliderImg" id="s2">
+                      <input type="radio" name="sliderImg" id="s3" checked>
+                      <input type="radio" name="sliderImg" id="s4">
+                      <input type="radio" name="sliderImg" id="s5">
+                      <label for="s1" id="slide1">
+                        <img src="" height="100%" width="100%">
+                      </label>
+                      <label for="s2" id="slide2">
+                        <img src="" height="100%" width="100%">
+                      </label>
+                      <label for="s3" id="slide3">
+                        <img src="" height="100%" width="100%">
+                      </label>
+                      <label for="s4" id="slide4">
+                        <img src="" height="100%" width="100%">
+                      </label>
+                      <label for="s5" id="slide5">
+                        <img src="" height="100%" width="100%">
+                      </label>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
 
 
 

@@ -65,6 +65,22 @@ fetch(`https://api.themoviedb.org/3/movie/${movieURL}?language=ko-KR`, options)
       })
       .catch((err) => console.error(err));
 
+
+      fetch(`https://api.themoviedb.org/3/movie/${movieURL}/images?`, options)
+        .then(response => response.json())
+        .then(response => {
+          let j = 1;
+          for (let i = 0; i < response.posters.length; i++) {
+            if(response.posters[i].aspect_ratio < 1.0){
+              document.querySelector(`#slide${j} img`).src = `${pfxImage}${response.posters[i].file_path}`;
+              j++;
+              if (j >= 6) break;
+            }
+          }
+        })
+        .catch(err => console.error(err));
+
+
     // document.querySelector('#detail-container').innerHTML = result;
   })
   .catch((err) => console.error(err));
