@@ -1,7 +1,20 @@
 import API_TOKEN from "./config.js";
 
 let trailerUrl = "";
-const movieID = '653346'; // 1022789, 653346, 519182
+let movieID = '653346'; // 1022789, 653346, 519182
+
+// URL에서 쿼리 파라미터를 추출하는 함수
+function getQueryParameter() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const paramValue = urlParams.get('movieID');
+  if (paramValue){
+    console.log(paramValue);
+    movieID = paramValue;
+  }
+}
+  
+
+getQueryParameter();
 
 const options = {
   method: "GET",
@@ -100,12 +113,6 @@ document
   .addEventListener("show.bs.modal", function () {
     document.querySelector("#videoModal iframe").src = `${trailerUrl}`; // 원래 동영상 URL로
   });
-
-
-
-  
-
-
 
 
 
