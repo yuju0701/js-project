@@ -1,0 +1,232 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #5e95f3;
+    padding: 10px 20px;
+    width: 80%; /* 섹션 크기를 줄이기 */
+    max-width: 1285px; /* 최대 크기 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    border-radius: 10px;
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left .logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: white;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    text-align: center; /* 텍스트를 센터로 고정 */
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.nav-left {
+    margin-right: auto; /* 왼쪽 영역이 오른쪽 영역과 간격을 두도록 함 */
+}
+
+.nav-right {
+    margin-left: auto; /* 오른쪽 영역이 왼쪽 영역과 간격을 두도록 함 */
+}
+.hero-section {
+    /* background: url('/yuju/image/shrek.webp') no-repeat center center; */
+    background-color: black;
+    background-size: cover;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    position: relative;
+    width: 80%; /* 섹션 크기를 줄이기 */
+    max-width: 1285px; /* 최대 크기 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    border-radius: 10px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.search-box {
+    margin-top: 20px;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.search-button:hover {
+    background-color: #575757;
+}
+
+.preview-section {
+    width: 90%; /* 섹션 크기를 줄이기 */
+    max-width: 1290px; /* 최대 크기 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    padding: 20px;
+    background-color: #ffffff; /* 배경 색상 */
+}
+
+.tabs {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    margin-bottom: 20px;
+    width: 80%; /* 히어로 섹션 크기에 맞추기 */
+    max-width: 1285px; /* 최대 크기 설정 */
+    margin-left: 0; /* 왼쪽 정렬 */
+    gap: 2px; /* 탭 버튼 간의 간격 줄이기 */
+}
+
+.tab-button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+}
+
+.tab-button.active {
+    background-color: #5e95f3;
+}
+
+.tab-content {
+    display: none;
+    flex-wrap: wrap;
+}
+
+.tab-content.active {
+    display: flex;
+}
+
+.play-button {
+    display: none;
+}
+.preview-list {
+    display: flex;
+    overflow-x: auto;
+}
+
+.preview-item {
+    position: relative;
+    margin: 10px;
+    flex: 0 0 auto;
+    width: 300px; /* 이미지 크기 조절 */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: #ecf0f1;
+}
+
+.preview-item iframe {
+    width: 100%;
+    height: 200px;
+    border: none;
+}
+
+.preview-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.preview-info h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.preview-info p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+.preview-list {
+    display: flex;
+    overflow-x: hidden; /* 스크롤바 숨기기 */
+}
+
+#latest-movie-board {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* 가로 스크롤을 허용 */
+    padding: 10px;
+    gap: 20px; /* 영화 카드 사이의 간격 */
+}
+
+#popular-movie-board {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto; /* 가로 스크롤을 허용 */
+    padding: 10px;
+    gap: 20px; /* 영화 카드 사이의 간격 */
+}
+
+.MovieInfo {
+    flex: 0 0 auto;
+    width: 200px; /* 영화 카드의 너비 */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* 영화 카드 배경 색 */
+}
+
+.MovieInfo h1 {
+    font-size: 1.2rem; /* 제목 글자 크기 */
+    margin: 10px 0; /* 위아래 여백 */
+    text-align: left; /* 제목 가운데 정렬 */
+}
+
+.MovieInfo p {
+    margin-top: auto; /* 개봉일을 아래로 밀어내기 위해 자동으로 여백을 추가합니다 */
+    font-size: 0.9rem; /* 개봉일 글자 크기 */
+}
+
