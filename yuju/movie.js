@@ -167,3 +167,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
   startAutoScroll();
 });
+
+// 상세페이지 열기
+const openDetailPage = (movieID) => {
+  const url =
+    "../JeongChan/mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+  // window.location.href = url;
+  window.open(url, "_blank");
+};
+
+// 상세페이지 열기
+const openDetailPage = (movieID) => {
+  const url =
+    "../JeongChan/mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+  // window.location.href = url;
+  window.open(url, "_blank");
+};
