@@ -13,75 +13,95 @@
     <title>Document</title>
   </head>
 
-
-
-
-
-
   <body>
-    <div id="detail-container" class="container">
-      <div>
-        <img src="" id="detail-poster-img"/>
+    <div class="custom-bg">
+      <img src="" id="detail-background-img" class="img-fit" />
+      <div id="detail-container" class="container">
+        <div>
+          <img src="" id="detail-poster-img" />
+        </div>
+
+        <div>
+          <div>
+            <a id="detail-title" class="detail-tag-a" href="#">제목</a>
+            <span id="detail-release-date" class="detail-release-date"
+              >날짜</span
+            >
+          </div>
+
+          <div>
+            <span class="detail-certification">ALL</span>
+            <span class="detail-release">날짜</span>
+            <span>●</span>
+            <span class="detail-genres">장르</span>
+            <span>●</span>
+            <span class="detail-runtime">런타임</span>
+          </div>
+
+          <div class="detail-rating">평점</div>
+
+          <div class="detail-tagline">tagline</div>
+
+          <div>개요</div>
+
+          <div class="detail-overview">overview</div>
+
+          <div class="container py-4">
+            <div class="gap-2">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#videoModal"
+              >
+                예고편 재생
+              </button>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="videoModal"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Trailer</h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body p-0">
+                  <div class="ratio ratio-16x9 detail-trailer">
+                    <iframe
+                      width="1259"
+                      height="708"
+                      src=""
+                      title=""
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerpolicy="strict-origin-when-cross-origin"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          
+
+
+
+        </div>
       </div>
-      
-      <div>
-        <div>
-          <a id="detail-title" class="detail-tag-a" href="#">제목</a>
-          <span id="detail-release-date" class="detail-release-date">날짜</span>
-        </div>
-
-        <div>
-          <span class="detail-certification">ALL</span>
-          <span class="detail-release">날짜</span>
-          <span >●</span>
-          <span class="detail-genres">장르</span>
-          <span >●</span>
-          <span class="detail-runtime">런타임</span>
-        </div>
-
-        <div class="detail-rating">
-          평점
-        </div>
-
-        <div class="detail-tagline">
-          tagline
-        </div>
-
-        <div>
-          개요
-        </div>
-
-        <div class="detail-overview">
-          overview
-        </div>
-
-        
-
-      </div>
-
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
