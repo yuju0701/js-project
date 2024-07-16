@@ -5,10 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 500px;
-  background-image: url("https://i.namu.wiki/i/5xyN7UC4YqVHz6WXj6MZDNaXlXZlS4vHfhvErhNl51tp089evgBmsFlHMp0zO72NRjrmGZ1fyiwQbIW0gHgJyQ.webp");
-  background-repeat: no-repeat;
-  background-position: center;
   position: relative;
 }
 
