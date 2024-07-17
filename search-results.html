@@ -13,17 +13,27 @@
     <title>Search Results</title>
   </head>
   <body>
+    <!--전체 컨테이너-->
     <div class="container">
-      <form id="search-form__result">
-        <input
-          id="search-input__result"
-          type="text"
-          placeholder="검색어를 입력해주세요"
-        />
-        <button type="submit">검색</button>
-      </form>
-      <div class="search-board"></div>
-      <div class="recommend-board"></div>
+      <!-- 검색창-->
+      <section>
+        <form id="search-form__result">
+          <input
+            id="search-input__result"
+            type="text"
+            placeholder="Please write here"
+          />
+          <button type="submit">search</button>
+        </form>
+      </section>
+      <!-- 검색 결과 보여주는 창-->
+      <section>
+        <div class="search-board"></div>
+      </section>
+      <!--추천 영화 보여주는 창-->
+      <section>
+        <div class="recommend-board"></div>
+      </section>
     </div>
 
     <script src="yongmin/search-results.js"></script>

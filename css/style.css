@@ -3,7 +3,7 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
+  background-color: #f1efe9;
   margin: 0;
   padding: 0;
 }
@@ -70,6 +70,7 @@ nav ul li a:hover {
   /* background: url('/yuju/image/shrek.webp') no-repeat center center; */
   background-color: black;
   background-size: cover;
+  background-position: center;
   color: white;
   padding: 100px 20px;
   text-align: center;
@@ -78,6 +79,10 @@ nav ul li a:hover {
   max-width: 1285px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-radius: 10px;
+}
+
+.hero-section h1 {
+  font-size: 50px;
 }
 
 .hero-content {
