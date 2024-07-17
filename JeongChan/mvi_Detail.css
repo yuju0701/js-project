@@ -57,14 +57,15 @@ a {
 }
 
 .img-fit {
-  opacity: .2;
+  opacity: .4;
   width: 100%; /* 부모 요소의 너비에 맞춤 */
   height: auto; /* 비율을 유지하면서 높이 조정 */
   position: absolute; /* 부모 요소 안에서 절대 위치 */
-  top: 50%; /* 이미지 중앙 정렬 */
-  left: 50%; /* 이미지 중앙 정렬 */
+  /* top: 50%;
+  left: 50%;  */
   transform: translate(-50%, -50%); /* 이미지 중앙 정렬 */
   z-index: -1;
+  border-radius: 10%;
 }
 
 .detail-background-transparent {
@@ -74,6 +75,7 @@ a {
 
 #detail-poster-img {
   transition: transform 0.3s ease;
+  border-radius: 10%;
 }
 
 #detail-poster-img:hover {
@@ -82,6 +84,7 @@ a {
 
 .detail-image-slider img {
   transition: transform 0.3s ease;
+  border-radius: 10%;
 }
 
 .detail-image-slider img:hover {
@@ -138,6 +141,62 @@ a {
   box-shadow: 0 6px 10px 0 rgba(0,0,0,.3), 0 2px 2px 0 rgba(0,0,0,.2);
   transform: translate3d(-15%,0,-100px);
 }
+
+
+.kenburns-left {
+	animation: kenburns-left 5s ease-out both;
+}
+
+
+/**
+ * ----------------------------------------
+ * animation kenburns-left
+ * ----------------------------------------
+ */
+ @keyframes kenburns-left {
+    0% {
+      transform: scale(1) translate(0, 0);
+      transform-origin: 16% 50%;
+    }
+    100% {
+      transform: scale(1.25) translate(-20px, 15px);
+      transform-origin: left;
+    }
+  }
+  
+  .shadow-pop-bl:hover {
+    animation: shadow-pop-bl 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  }
+
+
+ @keyframes shadow-pop-bl {
+  0% {
+    box-shadow: 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e, 0 0 #3e3e3e;
+    transform: translateX(0) translateY(0);
+  }
+  100% {
+    box-shadow: -1px 1px #3e3e3e, -2px 2px #3e3e3e, -3px 3px #3e3e3e, -4px 4px #3e3e3e, -5px 5px #3e3e3e, -6px 6px #3e3e3e, -7px 7px #3e3e3e, -8px 8px #3e3e3e;
+    transform: translateX(8px) translateY(-8px);
+  }
+}
+
+
+.back-trans {
+  background: transparent;
+  border: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

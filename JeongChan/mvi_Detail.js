@@ -1,7 +1,7 @@
 import API_TOKEN from "./config.js";
 
 let trailerUrl = "";
-let movieID = '653346'; // 1022789, 653346, 519182
+let movieID = '1022789'; // 1022789, 653346, 519182
 
 // URL에서 쿼리 파라미터를 추출하는 함수
 function getQueryParameter() {
