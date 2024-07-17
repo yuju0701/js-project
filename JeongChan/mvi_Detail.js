@@ -24,7 +24,7 @@ const options = {
   },
 };
 
-const pfxImage = "https://media.themoviedb.org/t/p/w220_and_h330_face";
+const pfxImage = "https://media.themoviedb.org/t/p/original";
 let tmp = ``;
 // https://media.themoviedb.org/t/p/w220_and_h330_face/lapab2EdLTL6srTus5ktgr64bqF.jpg
 
