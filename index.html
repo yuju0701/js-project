@@ -48,14 +48,15 @@
     <div class="hero-section">
       <div class="hero-content">
         <h1>Welcome to Movie Search</h1>
-        <div class="search-box">
+        <form id="search-form">
           <input
-            type="text"
+            id="search-input"
             class="search-input"
-            placeholder="Search for movies..."
+            type="text"
+            placeholder="검색어를 입력해주세요"
           />
-          <button class="search-button">Search</button>
-        </div>
+          <button type="submit" class="search-button">Search</button>
+        </form>
       </div>
     </div>
     <!-------------------------- 배경 이미지 및 검색 부분 ---------------------------->
@@ -389,5 +390,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="yuju/movie.js"></script>
+    <script src="yongmin/search.js"></script>
   </body>
 </html>
