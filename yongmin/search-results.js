@@ -1,7 +1,7 @@
 //변수 선언
 const API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3Yzg5M2RlN2UxMTFiNjFlNGM1ZDQ2ODIyN2UwYTZjOCIsIm5iZiI6MTcyMTA0OTE1NC4xNTk0MzYsInN1YiI6IjY2OTQ3MjU1YWY2MzU5NDIwZDAyOGNlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1ywthX0pc-265Z6X-wSh9LlCdiG75bmTGUvI5cD7HR0";
-let searchUrl = new URL(`https://api.themoviedb.org/3/search/multi`);
+let searchUrl = new URL(`https://api.themoviedb.org/3/search/movie`);
 let recommendUrl;
 let searchResultList = [];
 
@@ -71,11 +71,11 @@ const render = (movies) => {
         <div onclick="recommendation(${
           movie.id
         })" class="col-lg-2 search-result__img">
-        ${
-          poster
-            ? `<img src="https://image.tmdb.org/t/p/w200${poster}" alt="${title} 포스터">`
-            : `../JeongChan/No img.png`
-        }   
+      
+         
+           '<img src="${poster ? `https://image.tmdb.org/t/p/w200${poster}` : './JeongChan/No img.png'}" alt="${title} 포스터">'
+
+         
       </div>
         <div class="col-lg-10 search-result__content">
         <div class="search-result__content-title">
