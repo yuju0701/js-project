@@ -15,7 +15,7 @@
 
   <body>
     <div class="custom-bg">
-      <img src="" id="detail-background-img" class="img-fit" />
+      <img src="" id="detail-background-img" class="img-fit kenburns-left" />
       <div class="container">
         <div id="detail-container">
         <div>
@@ -57,14 +57,27 @@
 
           <div class="container py-4">
             <div class="gap-2">
-              <button
-                type="button"
-                class="btn btn-primary"
-                data-bs-toggle="modal"
-                data-bs-target="#videoModal"
-              >
-                예고편 재생
+
+              <button data-bs-toggle="modal"
+              data-bs-target="#videoModal" type="button" class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <span class="sr-only"><b>Watch Trailer</b></span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="h-5 w-5 mr-2"
+                >
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+                <span class="font-bold"><b>Watch Trailer</b></span>
               </button>
+
             </div>
           </div>
           <div
