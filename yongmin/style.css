@@ -1,24 +1,6 @@
 .search-result {
   display: flex;
 }
-#search-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
-  background-image: url("https://i.namu.wiki/i/5xyN7UC4YqVHz6WXj6MZDNaXlXZlS4vHfhvErhNl51tp089evgBmsFlHMp0zO72NRjrmGZ1fyiwQbIW0gHgJyQ.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  position: relative;
-}
-
-#search-form input {
-  width: 500px;
-  height: 50px;
-  border-radius: 10px;
-  border: none;
-  margin-right: 20px;
-}
 
 #search-form button {
   position: absolute;
@@ -30,7 +12,6 @@
 
 .recommend-board {
   display: flex;
-  overflow-x: auto;
 }
 .recommend-board div {
   margin-right: 10px;

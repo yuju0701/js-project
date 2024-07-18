@@ -1,19 +1,86 @@
 @import url(reset.css);
+@import url(search.css);
+@import url(recommend.css);
 
 body {
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  margin: 0;
-  padding: 0;
+  /*background-color: #f1efe9*/
+  z-index: 0;
+  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJiOG033A5k8JGaWUcQxqjf2TEZyYFhPZuXLVvCTkMwH0gxghxskczHpOXUuCzUxvTltGRUfpFfWRvWXnncedf8XroS_pM-iiNZ-pfwQik4EdmZnQvqsUPk8r7EGR8TBnJ0kPbbNGr0r__zn-UTYVdbn_WW-qT0yxxlz--veqbQs2zD4ieDAK3NlRNSQ/s0/4K-COZY-HOUSE-WALLPAPER-PC-11112022.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
+.main {
+  display: flex;
+}
+/* 왼쪽 메뉴 */
+.menu-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 100vh;
+  padding-left: 200px;
+  margin-right: 50px;
+}
+
+.menu-area__logo {
+  background-color: white;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin-bottom: 50px;
+}
+
+.menu-area__menu {
+  width: 250px;
+  height: 800px;
+  border-radius: 300px;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu-area__menu-btn {
+  font-size: 60px;
+  color: white;
+}
+
+.menu-area__menu-btn:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  color: #575757;
+  padding: 20px;
+  transition: all 0.5s ease-in-out;
+  border-radius: 50px;
+}
+/*오른쪽 스크린 화면*/
+.screen-area {
+  display: flex;
+}
+
+.screen {
+  padding: 30px 0px;
+  height: 1300px;
+  width: 1500px;
+  margin-top: 100px;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(15px); /* Blur effect */
+  border-radius: 100px;
+}
+/* 네이게이션 */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #5e95f3;
+  /*background-color: #5e95f3;*/
   padding: 10px 20px;
-  width: 80%; /* 섹션 크기를 줄이기 */
+  width: 100%; /* 섹션 크기를 줄이기 */
   max-width: 1285px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-radius: 10px;
@@ -54,8 +121,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #575757;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
+  color: #575757;
 }
 
 .nav-left {
@@ -65,12 +133,11 @@ nav ul li a:hover {
 .nav-right {
   margin-left: auto; /* 오른쪽 영역이 왼쪽 영역과 간격을 두도록 함 */
 }
+
+/*검색창*/
 .hero-section {
   /* background: url('/yuju/image/shrek.webp') no-repeat center center; */
-  background-color: black;
-  background-size: cover;
   color: white;
-  padding: 100px 20px;
   text-align: center;
   position: relative;
   width: 80%; /* 섹션 크기를 줄이기 */
@@ -91,10 +158,20 @@ nav ul li a:hover {
 .search-input {
   padding: 10px;
   font-size: 16px;
-  width: 300px;
+  width: 100%;
   border: none;
   border-radius: 5px;
   margin-right: 10px;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+  color: white;
+}
+
+.search-input::placeholder {
+  color: white;
+}
+
+.search-input:focus {
+  outline: none;
 }
 
 .search-button {
@@ -111,12 +188,13 @@ nav ul li a:hover {
   background-color: #575757;
 }
 
+/*preview*/
+
 .preview-section {
   width: 90%; /* 섹션 크기를 줄이기 */
   max-width: 1290px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
-  padding: 20px;
-  background-color: #ffffff; /* 배경 색상 */
+  /*background-color: #ffffff;*/ /* 배경 색상 */
 }
 
 .tabs {
@@ -168,7 +246,7 @@ nav ul li a:hover {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  background-color: #ecf0f1;
+  /*background-color: #ecf0f1;*/
 }
 
 .preview-item iframe {
@@ -185,11 +263,12 @@ nav ul li a:hover {
 .preview-info h3 {
   font-size: 18px;
   margin: 10px 0;
+  color: #ffffff;
 }
 
 .preview-info p {
   font-size: 14px;
-  color: #7f8c8d;
+  color: #ffffff;
 }
 
 .preview-list {
@@ -215,11 +294,12 @@ nav ul li a:hover {
 
 .MovieInfo {
   flex: 0 0 auto;
-  width: 200px; /* 영화 카드의 너비 */
-  border: 1px solid #ccc;
+  width: 220px; /* 영화 카드의 너비 */
+  /*border: 1px solid #ccc;*/
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #fff; /* 영화 카드 배경 색 */
+  background-color: transparent; /* 영화 카드 배경 색 */
+  color: white;
 }
 
 .MovieInfo h1 {
