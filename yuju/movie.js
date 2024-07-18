@@ -43,7 +43,7 @@ const latestMovieRender = (movie) => {
     <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
         ${
           movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" ;
 ">`
             : "<p>포스터 이미지가 없습니다.</p>"
         }
@@ -81,7 +81,7 @@ const popularMovieRender = (movie) => {
     <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
         ${
           movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터";
 ">`
             : "<p>포스터 이미지가 없습니다.</p>"
         }

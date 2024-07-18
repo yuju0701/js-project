@@ -289,3 +289,21 @@ nav ul li a:hover {
   display: flex;
   overflow-x: hidden; /* 스크롤바 숨기기 */
 }
+
+.screen__up-page {
+  display: flex;
+  justify-content: center;
+}
+
+.now-playing {
+  width: 60%;
+  background-color: tomato;
+  height: 500px;
+}
+
+.preview {
+  background-color: tomato;
+  width: 25%;
+  height: 500px;
+  margin-left: 30px;
+}
