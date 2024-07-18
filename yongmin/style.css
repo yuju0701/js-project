@@ -1,0 +1,21 @@
+.search-result {
+  display: flex;
+}
+
+#search-form button {
+  position: absolute;
+  right: 405px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: gray;
+}
+
+.recommend-board {
+  display: flex;
+}
+.recommend-board div {
+  margin-right: 10px;
+}
+.recommend-board img {
+  max-height: 200px; /* 이미지의 최대 높이를 설정하여 일정한 크기로 표시 */
+}
