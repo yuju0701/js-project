@@ -1,7 +1,7 @@
 //변수 선언
 const API_KEY =
   "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3Yzg5M2RlN2UxMTFiNjFlNGM1ZDQ2ODIyN2UwYTZjOCIsIm5iZiI6MTcyMTA0OTE1NC4xNTk0MzYsInN1YiI6IjY2OTQ3MjU1YWY2MzU5NDIwZDAyOGNlNSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1ywthX0pc-265Z6X-wSh9LlCdiG75bmTGUvI5cD7HR0";
-let searchUrl = new URL(`https://api.themoviedb.org/3/search/multi`);
+let searchUrl = new URL(`https://api.themoviedb.org/3/search/movie`);
 let recommendUrl;
 let searchResultList = [];
 

@@ -1,12 +1,22 @@
 @import url(reset.css);
 @import url(search.css);
 @import url(recommend.css);
+@import url(lastest-movie.css);
+
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: "BMJUA";
   /*background-color: #f1efe9*/
   z-index: 0;
-  background-image: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjJiOG033A5k8JGaWUcQxqjf2TEZyYFhPZuXLVvCTkMwH0gxghxskczHpOXUuCzUxvTltGRUfpFfWRvWXnncedf8XroS_pM-iiNZ-pfwQik4EdmZnQvqsUPk8r7EGR8TBnJ0kPbbNGr0r__zn-UTYVdbn_WW-qT0yxxlz--veqbQs2zD4ieDAK3NlRNSQ/s0/4K-COZY-HOUSE-WALLPAPER-PC-11112022.jpg");
+  background-image: url("https://wallpapers.com/images/featured/beach-sunset-bwvid0licus1pjda.jpg");
+  /*https://images4.alphacoders.com/134/1348313.png*/
   background-size: cover;
   background-position: center;
 }
@@ -27,11 +37,16 @@ body {
 }
 
 .menu-area__logo {
-  background-color: white;
   width: 220px;
   height: 220px;
   border-radius: 50%;
   margin-bottom: 50px;
+}
+
+.menu-area__logo img {
+  width: 220px;
+  border-radius: 50%;
+  size: 150%;
 }
 
 .menu-area__menu {
@@ -274,41 +289,4 @@ nav ul li a:hover {
 .preview-list {
   display: flex;
   overflow-x: hidden; /* 스크롤바 숨기기 */
-}
-
-#latest-movie-board {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto; /* 가로 스크롤을 허용 */
-  padding: 10px;
-  gap: 20px; /* 영화 카드 사이의 간격 */
-}
-
-#popular-movie-board {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto; /* 가로 스크롤을 허용 */
-  padding: 10px;
-  gap: 20px; /* 영화 카드 사이의 간격 */
-}
-
-.MovieInfo {
-  flex: 0 0 auto;
-  width: 220px; /* 영화 카드의 너비 */
-  /*border: 1px solid #ccc;*/
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: transparent; /* 영화 카드 배경 색 */
-  color: white;
-}
-
-.MovieInfo h1 {
-  font-size: 1.2rem; /* 제목 글자 크기 */
-  margin: 10px 0; /* 위아래 여백 */
-  text-align: left; /* 제목 가운데 정렬 */
-}
-
-.MovieInfo p {
-  margin-top: auto; /* 개봉일을 아래로 밀어내기 위해 자동으로 여백을 추가합니다 */
-  font-size: 0.9rem; /* 개봉일 글자 크기 */
 }

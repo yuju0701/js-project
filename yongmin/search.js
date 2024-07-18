@@ -37,7 +37,7 @@ const search = async (event) => {
   console.log(data);
   console.log(searchResultList);
   localStorage.setItem("searchResults", JSON.stringify(searchResultList));
-  window.location.href = "search-results.html";
+  window.location.href = "search-results.html"; //이쪽으로 이동
 };
 
 document.querySelector("#search-form").addEventListener("submit", search);
