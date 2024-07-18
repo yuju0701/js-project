@@ -27,72 +27,90 @@ const pfxImage = "https://media.themoviedb.org/t/p/original";
 let tmp = ``;
 // https://media.themoviedb.org/t/p/w220_and_h330_face/lapab2EdLTL6srTus5ktgr64bqF.jpg
 
-fetch(`https://api.themoviedb.org/3/movie/${movieID}?language=ko-KR`, options)
-  .then((response) => response.json())
-  .then((response) => {
-    document.querySelector(".mvi-poster").style.backgroundImage = `url(${pfxImage}${response.poster_path}`;
 
-    // document.querySelector("#detail-background-img").src = `${pfxImage}${response.backdrop_path})`;
+const detailMovieSearch = async (ID) => {
+  console.log(ID);
+  await fetch(`https://api.themoviedb.org/3/movie/${ID}?language=ko-KR`, options)
+    .then((response) => response.json())
+    .then((response) => {
+      document.querySelector(".mvi-poster").style.backgroundImage = `url(${pfxImage}${response.poster_path}`;
+  
+      // document.querySelector("#detail-background-img").src = `${pfxImage}${response.backdrop_path})`;
+  
+      document.querySelector("#detail-title").textContent = response.title;
+      document.querySelector(
+        "#detail-release-date"
+      ).textContent = `${response.release_date.substring(0, 4)}`;
+      document.querySelector(".detail-release").textContent = response.release_date;
+  
+      response.genres.forEach((element) => {
+        tmp += `<a href="" data-id="${element.id}">${element.name}</a>`;
+      });
+      document.querySelector(".detail-genres").innerHTML = tmp;
+      tmp = ``;
+      document.querySelector(".detail-runtime").textContent = convertIntToTime(
+        response.runtime
+      );
+      // document.querySelector(".detail-rating").textContent =
+      //   response.vote_average.toString().substring(0,4);
+  
+      // document.querySelector(".detail-tagline").textContent = response.tagline;
+  
+      document.querySelector("#detail-overview").textContent = response.overview;
 
-    document.querySelector("#detail-title").textContent = response.title;
-    document.querySelector(
-      "#detail-release-date"
-    ).textContent = `${response.release_date.substring(0, 4)}`;
-    document.querySelector(".detail-release").textContent = response.release_date;
+      getYoutube(ID);
+  
+      getSlideImage(ID);
 
-    response.genres.forEach((element) => {
-      tmp += `<a href="" data-id="${element.id}">${element.name}</a>`;
-    });
-    document.querySelector(".detail-genres").innerHTML = tmp;
-    tmp = ``;
-    document.querySelector(".detail-runtime").textContent = convertIntToTime(
-      response.runtime
-    );
-    // document.querySelector(".detail-rating").textContent =
-    //   response.vote_average.toString().substring(0,4);
+      fetchCredits(ID)
 
-    // document.querySelector(".detail-tagline").textContent = response.tagline;
+      recommendation(ID);
+  
+  
+      // document.querySelector('#detail-container').innerHTML = result;
+    })
+    .catch((err) => console.error(err));
 
-    document.querySelector("#detail-overview").textContent = response.overview;
+    
+  
+}
 
-    fetch(
-      `https://api.themoviedb.org/3/movie/${movieID}/videos?language=ko-KR`,
-      options
-    )
-      .then((response) => response.json())
-      .then((response) => {
-        for (let i = 0; i < response.results.length; i++) {
-          if (
-            response.results[i].site === "YouTube" &&
-            response.results[i].type === "Trailer"
-          ) {
-            trailerUrl = `https://www.youtube.com/embed/${response.results[i].key}`;
-            document.querySelector(".detail-trailer iframe").src = trailerUrl;
-            break;
-          }
-        }
-      })
-      .catch((err) => console.error(err));
-
-
-      fetch(`https://api.themoviedb.org/3/movie/${movieID}/images?`, options)
-        .then(response => response.json())
-        .then(response => {
-          let j = 1;
-          for (let i = 0; i < response.posters.length; i++) {
-            if(response.posters[i].aspect_ratio < 1.0){
-              document.querySelector(`#slide${j} img`).src = `${pfxImage}${response.posters[i].file_path}`;
-              j++;
-              if (j >= 6) break;
+const getSlideImage = async (ID) => {
+  await fetch(`https://api.themoviedb.org/3/movie/${ID}/images?`, options)
+          .then(response => response.json())
+          .then(response => {
+            let j = 1;
+            for (let i = 0; i < response.posters.length; i++) {
+              if(response.posters[i].aspect_ratio < 1.0){
+                document.querySelector(`#slide${j} img`).src = `${pfxImage}${response.posters[i].file_path}`;
+                j++;
+                if (j >= 6) break;
+              }
             }
-          }
-        })
-        .catch(err => console.error(err));
+          })
+          .catch(err => console.error(err));
+}
 
-
-    // document.querySelector('#detail-container').innerHTML = result;
-  })
-  .catch((err) => console.error(err));
+const getYoutube = async (ID) => {
+  await fetch(
+    `https://api.themoviedb.org/3/movie/${ID}/videos?language=ko-KR`,
+    options
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      for (let i = 0; i < response.results.length; i++) {
+        if (
+          response.results[i].site === "YouTube" &&
+          response.results[i].type === "Trailer"
+        ) {
+          trailerUrl = `https://www.youtube.com/embed/${response.results[i].key}`;
+          document.querySelector(".detail-trailer iframe").src = trailerUrl;
+          break;
+        }
+      }
+    })
+    .catch((err) => console.error(err));
+}
 
 function convertIntToTime(minutes) {
   let hours = Math.floor(minutes / 60); // 시간 계산
@@ -172,16 +190,16 @@ const defaultImage = '../No img.png';  // 출연진 사진이 없을 경우 사�
  * @param {number} movieId - 영화 ID입니다.
  * @param {HTMLElement} movieDiv - 출연진 정보를 표시할 부모 요소.
  */
-async function fetchCredits() {
+async function fetchCredits(ID) {
   try {
-    const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieID}/credits?api_key=${apiKey}&language=ko-KR`);
+    const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${ID}/credits?api_key=${apiKey}&language=ko-KR`);
     if (!creditsResponse.ok) {
       throw new Error(`HTTP error! status: ${creditsResponse.status}`);
     }
     const creditsData = await creditsResponse.json();
     displayCredits(creditsData.cast);
   } catch (error) {
-    console.error(`Error fetching credits for movie ${movieID}:`, error);
+    console.error(`Error fetching credits for movie ${ID}:`, error);
     const creditsDiv = document.querySelector(`#results`);
     creditsDiv.innerHTML = '<p>출연진 정보를 가져오는 도중 오류가 발생했습니다.</p>';
   }
@@ -236,8 +254,6 @@ function displayError(message) {
   resultsDiv.innerHTML = `<p>${message}</p>`;
 }
 
-fetchCredits()
-
 
 
 
@@ -274,9 +290,9 @@ function detailSlider() {
 
 
 //추천 영화 데이터를 가져오는 함수
-const recommendation = async () => {
+const recommendation = async (id) => {
   const recommendUrl = new URL(
-    `https://api.themoviedb.org/3/movie/${movieID}/similar?language=ko-KR&page=1`
+    `https://api.themoviedb.org/3/movie/${id}/similar?language=ko-KR&page=1`
   );
   const response = await fetch(recommendUrl, options);
   const data = await response.json();
@@ -300,7 +316,7 @@ const recommendRender = (movies) => {
 
     const recommendDiv = document.createElement("div");
     recommendDiv.innerHTML = `
-        <div class="recommend-container"onclick="recommendation(${movie.id})">
+        <div class="recommend-container">
         ${
           poster
             ? `<img src="https://image.tmdb.org/t/p/w200${poster}" alt="포스터">`
@@ -310,8 +326,12 @@ const recommendRender = (movies) => {
           </div>
         </div>
             `;
+    recommendDiv.addEventListener('click', function() {
+      detailMovieSearch(movie.id);
+    });
     recommendBoard.appendChild(recommendDiv);
   });
 };
 
-recommendation();
+
+detailMovieSearch(movieID);
