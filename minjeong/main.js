@@ -1,4 +1,5 @@
-import API_TOKEN from "./JeongChan/config.js";
+import API_TOKEN from "../JeongChan/config.js"
+// import API_TOKEN from "./config.js";
 
 let trailerUrl = "";
 let movieID = '653346'; // 1022789, 653346, 519182
@@ -115,8 +116,10 @@ document
   });
 
 
-const apiKey = 'c6e6f258ddf01e890ce7dc0db97ee5d6';  
+// 출연진area
+const apiKey = '718c396eba4b86e15ded8489c7a51df3';  
 const defaultImage = './No img.png';  // 출연진 사진이 없을 경우 사용할 기본 이미지 경로.
+
 
 /**
  * 특정 영화의 출연진 정보를 가져오는 함수.
@@ -131,45 +134,40 @@ async function fetchCredits() {
     displayCredits(creditsData.cast);
   } catch (error) {
     console.error(`Error fetching credits for movie ${movieID}:`, error);
-    const creditsDiv = document.querySelector(`#results`);
+    const creditsDiv = document.getElementById('castMembers');
     creditsDiv.innerHTML = '<p>출연진 정보를 가져오는 도중 오류가 발생했습니다.</p>';
   }
 }
 
-/**
- * 출연진 정보를 화면에 표시하는 함수.
- * @param {number} movieId - 영화 ID입니다.
- * @param {Array} cast - 출연진 데이터 배열입니다.
- * @param {HTMLElement} movieDiv - 출연진 정보를 표시할 부모 요소.
- */
+// 출연진정보
 function displayCredits(cast) {
-  const creditsDiv = document.querySelector(`#results`);
-  creditsDiv.innerHTML = '';  // 이전 출연진 결과를 지웁니다.
+  const creditsDiv = document.getElementById('castMembers');
+  creditsDiv.innerHTML = '';  
 
   if (cast.length === 0) {
     creditsDiv.innerHTML = '<p>출연진 정보가 없습니다.</p>';  // 출연진 정보가 없을 경우 메시지를 표시.
     return;
   }
 
-  const castHtml = `
-   <div>
-     <p>출연진</p>
-     <ul class="cast-list">
-       ${cast.map(actor => `
-         <li class="cast-item">
-           <div class="cast-information">
-             <img src="${actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : defaultImage}" 
-                  alt="${actor.name} 사진" 
-                  onerror="this.onerror=null;this.src='${defaultImage}';"/>
-             <div class="cast-details">
-               <p class="cast-name">${actor.name}</p>
-               <p class="cast-character">${actor.character}</p>
-             </div>
-           </div>
-         </li>
-       `).join('')}
-     </ul>
-    </div>
+const castHtml = `
+  <div class="cast-area">
+    <p class="cast-title">출연진</p>
+    <ul class="cast-list">
+      ${cast.map(actor => `
+        <li class="cast-item">
+          <div class="cast-information">
+            <img src="${actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : defaultImage}" 
+                 alt="${actor.name} 사진" 
+                 onerror="this.onerror=null;this.src='${defaultImage}';"/>
+            <div class="cast-details">
+              <p class="cast-name">${actor.name}</p>
+              <p class="cast-character">${actor.character}</p>
+            </div>
+          </div>
+        </li>
+      `).join('')}
+    </ul>
+  </div>
   `;
 
   creditsDiv.innerHTML = castHtml;  // 출연진 정보 목록을 한 번에 출력합니다.
@@ -180,8 +178,8 @@ function displayCredits(cast) {
  * @param {string} message - 표시할 오류 메시지.
  */
 function displayError(message) {
-  const resultsDiv = document.getElementById('results');
+  const resultsDiv = document.getElementById('castMembers');
   resultsDiv.innerHTML = `<p>${message}</p>`;
 }
 
-fetchCredits()
+fetchCredits();
