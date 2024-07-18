@@ -1,3 +1,5 @@
+@import url('/css/reset.css');
+
 body {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
@@ -62,8 +64,8 @@ nav ul li a:hover {
 .nav-right {
     margin-left: auto; /* 오른쪽 영역이 왼쪽 영역과 간격을 두도록 함 */
 }
+
 .hero-section {
-    /* background: url('/yuju/image/shrek.webp') no-repeat center center; */
     background-color: black;
     background-size: cover;
     color: white;
@@ -212,21 +214,26 @@ nav ul li a:hover {
 
 .MovieInfo {
     flex: 0 0 auto;
-    width: 200px; /* 영화 카드의 너비 */
+    width: 220px; /* 영화 카드의 너비 */
     border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: #fff; /* 영화 카드 배경 색 */
+    overflow: hidden; /* 카드 내부에 이미지가 넘치는 것을 숨김 */
+}
+
+.MovieInfo img {
+    width: 100%; /* 이미지가 카드 너비에 맞도록 조정 */
+    height: auto; /* 이미지 비율 유지 */
 }
 
 .MovieInfo h1 {
     font-size: 1.2rem; /* 제목 글자 크기 */
     margin: 10px 0; /* 위아래 여백 */
-    text-align: left; /* 제목 가운데 정렬 */
+    text-align: left; /* 제목 왼쪽 정렬 */
 }
 
 .MovieInfo p {
-    margin-top: auto; /* 개봉일을 아래로 밀어내기 위해 자동으로 여백을 추가합니다 */
+    margin-top: auto; /* 개봉일을 아래로 밀어내기 위해 자동으로 여백을 추가 */
     font-size: 0.9rem; /* 개봉일 글자 크기 */
 }
-
