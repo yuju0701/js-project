@@ -97,75 +97,31 @@ window.onload = () => {
   getPopularMovie();
 };
 
-function openTab(event, tabName) {
-  var i, tabcontent, tabbuttons;
+// 예고편 스크롤
+document.addEventListener('DOMContentLoaded', function () {
+    const previewList = document.querySelector('.preview-list');
+    let scrollAnimationFrame;
+    const scrollSpeed = 1; // 스크롤 속도 조절 (숫자가 클수록 빠름)
 
-  // 모든 탭 콘텐츠 숨기기
-  tabcontent = document.getElementsByClassName("tab-content");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-    tabcontent[i].classList.remove("active");
-  }
+    function smoothScroll() {
+        if (previewList.scrollTop < previewList.scrollHeight - previewList.clientHeight) {
+            previewList.scrollTop += scrollSpeed;
+        } else {
+            previewList.scrollTop = 0;
+        }
+        scrollAnimationFrame = requestAnimationFrame(smoothScroll);
+    }
 
-  // 모든 탭 버튼의 active 클래스 제거
-  tabbuttons = document.getElementsByClassName("tab-button");
-  for (i = 0; i < tabbuttons.length; i++) {
-    tabbuttons[i].classList.remove("active");
-  }
+    function startAutoScroll() {
+        scrollAnimationFrame = requestAnimationFrame(smoothScroll);
+    }
 
-  // 클릭한 탭의 콘텐츠 보여주기
-  document.getElementById(tabName).style.display = "flex";
-  document.getElementById(tabName).classList.add("active");
+    function stopAutoScroll() {
+        cancelAnimationFrame(scrollAnimationFrame);
+    }
 
-  // 클릭한 탭 버튼에 active 클래스 추가
-  event.currentTarget.classList.add("active");
-}
-
-// 초기 탭 열기
-document.getElementById("popular").style.display = "flex";
-document.getElementById("popular").classList.add("active");
-
-document.addEventListener("DOMContentLoaded", function () {
-  const previewList = document.querySelector(".preview-list");
-  const iframes = document.querySelectorAll(".preview-item iframe");
-  let scrollInterval;
-
-  function startAutoScroll() {
-    scrollInterval = setInterval(() => {
-      if (
-        previewList.scrollLeft <
-        previewList.scrollWidth - previewList.clientWidth
-      ) {
-        previewList.scrollLeft += 1;
-      } else {
-        previewList.scrollLeft = 0;
-      }
-    }, 20); // 스크롤 속도 조절 (숫자가 작을수록 빠름)
-  }
-
-  function stopAutoScroll() {
-    clearInterval(scrollInterval);
-  }
-
-  function onIframePlay() {
-    stopAutoScroll();
-  }
-
-  function onIframePause() {
-    startAutoScroll();
-  }
-
-  previewList.addEventListener("mouseenter", stopAutoScroll);
-  previewList.addEventListener("mouseleave", startAutoScroll);
-
-  iframes.forEach((iframe) => {
-    iframe.addEventListener("load", () => {
-      const iframeDocument =
-        iframe.contentDocument || iframe.contentWindow.document;
-      iframeDocument.addEventListener("play", onIframePlay, true);
-      iframeDocument.addEventListener("pause", onIframePause, true);
-    });
-  });
+    previewList.addEventListener('mouseenter', stopAutoScroll);
+    previewList.addEventListener('mouseleave', startAutoScroll);
 
   startAutoScroll();
 });
@@ -173,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
   const url =
-    "../JeongChan/mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
   // window.location.href = url;
   window.open(url, "_blank");
 };

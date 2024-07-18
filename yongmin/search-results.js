@@ -71,11 +71,11 @@ const render = (movies) => {
         <div onclick="recommendation(${
           movie.id
         })" class="col-lg-2 search-result__img">
-        ${
-          poster
-            ? `<img src="https://image.tmdb.org/t/p/w200${poster}" alt="${title} 포스터">`
-            : `../JeongChan/No img.png`
-        }   
+      
+         
+           '<img src="${poster ? `https://image.tmdb.org/t/p/w200${poster}` : './JeongChan/No img.png'}" alt="${title} 포스터">'
+
+         
       </div>
         <div class="col-lg-10 search-result__content">
         <div class="search-result__content-title">
