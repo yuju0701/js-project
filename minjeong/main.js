@@ -120,8 +120,6 @@ const defaultImage = './No img.png';  // 출연진 사진이 없을 경우 사�
 
 /**
  * 특정 영화의 출연진 정보를 가져오는 함수.
- * @param {number} movieId - 영화 ID입니다.
- * @param {HTMLElement} movieDiv - 출연진 정보를 표시할 부모 요소.
  */
 async function fetchCredits() {
   try {
@@ -153,7 +151,6 @@ function displayCredits(cast) {
     return;
   }
 
-  // 출연진 정보
   const castHtml = `
    <div>
      <p>출연진</p>
