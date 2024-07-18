@@ -113,15 +113,18 @@ const recommendRender = (movies) => {
   }
   movies.forEach((movie) => {
     const poster = movie.poster_path;
+    const title = movie.title || movie.name;
 
     const recommendDiv = document.createElement("div");
     recommendDiv.innerHTML = `
-        <div onclick="recommendation(${movie.id})">
+        <div class="recommend-container"onclick="recommendation(${movie.id})">
         ${
           poster
             ? `<img src="https://image.tmdb.org/t/p/w200${poster}" alt="포스터">`
             : "<p>포스터 이미지가 없습니다.</p>"
-        }   
+        } <div class="recommend__title-area">
+            <p>${title}</p>
+          </div>
         </div>
             `;
     recommendBoard.appendChild(recommendDiv);
