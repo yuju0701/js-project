@@ -88,25 +88,16 @@
           </nav>
           <!---------------------네비게이션 바----------------------->
 
-          <!-------------------------- 예고편 인기 부분---------------------------->
-          <div class="preview-section">
-            <div class="tabs">
-              <button
-                class="tab-button active"
-                onclick="openTab(event, 'popular')"
-              >
-                인기
-              </button>
-              <button class="tab-button" onclick="openTab(event, 'theater')">
-                극장
-              </button>
-            </div>
+          <!---------------------현재상영작----------------------->
 
+          <!---------------------현재상영작----------------------->
+
+          <!-------------------------- 예고편 부분---------------------------->
+          <div class="preview-section">
             <div class="tab-content" id="popular">
               <div class="preview-list" id="preview-list">
                 <div class="preview-item">
                   <iframe
-                    id="player1"
                     width="1280"
                     height="720"
                     src="https://www.youtube.com/embed/ivpHW4MWho8"
@@ -116,66 +107,45 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/lcUaMpTONZk')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
                     <h3>데드풀과 울버린</h3>
-                    <p>내한까지 남은 시간.. 단, 7일!</p>
+                    <p>나야, 우리 꼭 6년 만이네..</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player2"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/0J0jB2kVPxI"
-                    title="max 드라마 《하우스 오브 드래곤》시즌 2 메인 예고편 | 한글 자막"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/Vb4TNEQXNTk"
+                    title="[파일럿] ✈️코미디의 정석✈️ 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/0J0jB2kVPxI?si=WLAC_kyBAd09T77u')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>하우스 오브 드래곤</h3>
-                    <p>공식 예고편</p>
+                    <h3>파일럿</h3>
+                    <p>엥 조정석 왜 이렇게 예뻐;;</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player3"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/rXpDoYtkWMs"
-                    title="[에이리언: 로물루스] 메인 예고편"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/Hx7evMlyejs"
+                    title="[트위스터스]  파이널 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/rXpDoYtkWMs')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>에이리언: 로물루스</h3>
-                    <p>메인 예고편</p>
+                    <h3>트위스터스</h3>
+                    <p>역대급 토네이도와의 정면승부</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player4"
                     width="1280"
                     height="720"
                     src="https://www.youtube.com/embed/mAHiT4Rny2M"
@@ -185,20 +155,13 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/BhCSpmVOGow')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
                     <h3>베테랑2</h3>
-                    <p>인터내셔널 예고편</p>
+                    <p>드디어..≪베테랑2≫</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player5"
                     width="1280"
                     height="720"
                     src="https://www.youtube.com/embed/BtzjUN9346w"
@@ -208,135 +171,93 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/BtzjUN9346w')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
                     <h3>캡틴아메리카:브레이브 뉴 월드</h3>
-                    <p>티저예고편</p>
+                    <p>레드 헐크 떴다!!!!</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player6"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/7PHW3pKZfA8"
-                    title="롱 레그스 - 마지막 예고편 [한글 자막]"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/WpnTl2nllO4"
+                    title="[스마일 2] 1차 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/umEX4BHixRs')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>롱레그스</h3>
-                    <p>"SEE"</p>
+                    <h3>스마일2</h3>
+                    <p>곧 다시 웃게 될 거야...</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player7"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/Gl_LxjQ_Luo"
-                    title="여인과 바다 | 공식 예고편 | 디즈니+"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/oCjnThQNEX8"
+                    title="[콰이어트 플레이스: 첫째 날] 2차 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/J-8ppSWN8C0')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>여인과 바다</h3>
-                    <p>"Experience"</p>
+                    <h3>콰이어트 플레이스:첫째날</h3>
+                    <p>쉿! 입다더 이스키</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player8"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/S7rtTXEvacU"
-                    title="[이매큘레이트] 메인 예고편"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/drKYkxmuEiU"
+                    title="[핸섬가이즈  Handsome Guys] 1차 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/NPi6ZclFEjg')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>이매큘레이트</h3>
-                    <p>메인 예고편</p>
+                    <h3>핸섬가이즈</h3>
+                    <p>고자극 오싹 코미디!</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player9"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/cY95YW-HVCM"
-                    title="The Platform 2 | Official Teaser | Netflix"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/N3q6YYjnI70"
+                    title="[명탐정 코난: 100만 달러의 펜타그램] 메인 예고편 (더빙) 공개! | 7월 17일 대개봉 | 더빙/자막 동시개봉 | 극장판 명탐정 코난"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/cY95YW-HVCM')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>더 플랫폼</h3>
-                    <p>"Official Teaser"</p>
+                    <h3>명탐정 코난</h3>
+                    <p>백만달러의 펜타그램</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player10"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/D5CD6hFQjhE"
-                    title="[원더랜드] 메인 예고편"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/9br0nh4mGI4"
+                    title="[하이재킹] 1차 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/D1ZvQd_1zq4?si=cWNbTQkQS_NOsLZ7')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>원더랜드</h3>
-                    <p>Official Trailer [ENG SUB]</p>
+                    <h3>하이재킹</h3>
+                    <p>지금부터 이 비행기!! 이북간다</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player11"
                     width="1280"
                     height="720"
                     src="https://www.youtube.com/embed/yowWyxS5rXc"
@@ -346,49 +267,32 @@
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/hYXrH07rOcY')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
                     <h3>베놈:라스트댄스</h3>
-                    <p>런칭 예고편</p>
+                    <p>죽음이 갈라놓을 때까지</p>
                   </div>
                 </div>
                 <div class="preview-item">
                   <iframe
-                    id="player12"
-                    width="1280"
-                    height="720"
-                    src="https://www.youtube.com/embed/mU3iLmdFdic"
-                    title="다람이 무비: 비키니 시티를 구하라 | 공식 예고편 | 넷플릭스"
+                    width="914"
+                    height="514"
+                    src="https://www.youtube.com/embed/pMAPj6WVsT4"
+                    title="나쁜 놈들 제대로 뽀개버린다! [범죄도시4] 메인 예고편"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin"
                     allowfullscreen
                   ></iframe>
-                  <div
-                    class="play-button"
-                    onclick="openPlayer('https://www.youtube.com/embed/mU3iLmdFdic')"
-                  >
-                    <i class="fas fa-play"></i>
-                  </div>
                   <div class="preview-info">
-                    <h3>다람이 무비:비키니 시티를 구하라</h3>
-                    <p>공식 예고편</p>
+                    <h3>범죄도시4</h3>
+                    <p>또 못살게 구네!?</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-
           <!-------------------------- 예고편 부분---------------------------->
-          <div class="screen__up-page">
-            <section class="now-playing"></section>
-            <section class="preview"></section>
-          </div>
+
           <!-------------------------- 영화카드 부분-------------------------------->
           <section class="container">
             <div class="latest-movie">
@@ -425,6 +329,5 @@
     ></script>
     <script src="yuju/movie.js"></script>
     <script src="yongmin/search.js"></script>
-    <script src="js/searching-related.js"></script>
   </body>
 </html>
