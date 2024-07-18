@@ -188,61 +188,30 @@ nav ul li a:hover {
   background-color: #575757;
 }
 
-/*preview*/
-
+/* 예고편 부분 */
 .preview-section {
-  width: 90%; /* 섹션 크기를 줄이기 */
-  max-width: 1290px; /* 최대 크기 설정 */
+  width: 25%; /* 섹션 크기를 줄이기 */
+  max-width: 600px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   /*background-color: #ffffff;*/ /* 배경 색상 */
 }
 
-.tabs {
-  display: flex;
-  justify-content: flex-start; /* 왼쪽 정렬 */
-  margin-bottom: 20px;
-  width: 80%; /* 히어로 섹션 크기에 맞추기 */
-  max-width: 1285px; /* 최대 크기 설정 */
-  margin-left: 0; /* 왼쪽 정렬 */
-  gap: 2px; /* 탭 버튼 간의 간격 줄이기 */
-}
-
-.tab-button {
-  background-color: #000000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  outline: none;
-}
-
-.tab-button.active {
-  background-color: #5e95f3;
-}
-
-.tab-content {
-  display: none;
-  flex-wrap: wrap;
-}
-
-.tab-content.active {
-  display: flex;
-}
-
-.play-button {
-  display: none;
-}
 .preview-list {
   display: flex;
-  overflow-x: auto;
+  flex-direction: column; /* 수직 정렬 */
+  overflow-y: auto; /* 수직 스크롤 활성화 */
+  overflow-x: hidden; /* 수평 스크롤 비활성화 */
+  height: 500px; /* 원하는 높이로 설정 */
+   /* 스크롤바 숨기기 */
+   -ms-overflow-style: none;  /* IE and Edge */
+   scrollbar-width: none;  /* Firefox */
 }
 
 .preview-item {
   position: relative;
   margin: 10px;
   flex: 0 0 auto;
-  width: 300px; /* 이미지 크기 조절 */
+  width: 100%; /* 이미지 크기 조절 */
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -271,11 +240,8 @@ nav ul li a:hover {
   color: #ffffff;
 }
 
-.preview-list {
-  display: flex;
-  overflow-x: hidden; /* 스크롤바 숨기기 */
-}
 
+/*인기영화*/
 #latest-movie-board {
   display: flex;
   flex-wrap: nowrap;
