@@ -46,6 +46,9 @@
           <div class="hero-content">
             <form id="search-form">
               <input id="search-input" class="search-input" type="text" placeholder="검색어를 입력해주세요" />
+              <!-- 연관 검색어 부분 -->
+              <div id="suggestions"></div> 
+              <!--  -->
               <button type="submit" class="search-button">Search</button>
             </form>
           </div>
@@ -212,21 +215,14 @@
 
         <!-------------------------- 영화카드 부분-------------------------------->
         <section class="container">
-          <div class="latest-movie">
+          <button id="popular-Movie-btn">인기 영화</button><button id="latest-Movie-btn">최신 영화</button>
+          <div class="popular-movie">  
             <div>
-              <h1>최신 영화</h1>
-              <section id="latest-movie-board"></section>
-            </div>
-          </div>
-          <div class="popular-movie">
-            <div>
-              <h1>인기 영화</h1>
               <section id="popular-movie-board"></section>
             </div>
           </div>
           <div class="latest-movie">
             <div>
-              <h1></h1>
               <section id="latest-movie-board"></section>
             </div>
           </div>

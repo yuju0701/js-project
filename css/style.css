@@ -2,6 +2,7 @@
 @import url(search.css);
 @import url(recommend.css);
 @import url(lastest-movie.css);
+@import url(relatedSearch.css);
 
 @font-face {
   font-family: "BMJUA";
@@ -258,4 +259,23 @@ nav ul li a:hover {
 .preview-list {
   display: flex;
   overflow-x: hidden; /* 스크롤바 숨기기 */
+}
+
+#latest-Movie-btn, #popular-Movie-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+}
+
+#latest-Movie-btn:hover, #popular-Movie-btn:hover {
+  background-color: #575757;
+}
+
+#latest-Movie-btn.active-btn, #popular-Movie-btn.active-btn {
+  color: black;
+  background-color: white;
 }
