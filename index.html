@@ -12,34 +12,33 @@
   <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
 
-  <body>
-    <div class="main">
-      <!--왼쪽 메뉴를 감싸는 박스-->
-      <section class="menu-area">
-        <div class="menu-area__logo">
-          <img
-            src="https://cdn.discordapp.com/attachments/1262029239306158095/1263454109177217044/image-removebg-preview_1.png?ex=669a4ad5&is=6698f955&hm=2903f2f3f33ebc4416a4a41792759d7346907e9e7b982a419b1bcda39c748ed0&"
-          />
+<body>
+  <div class="main container">
+    <!--왼쪽 메뉴를 감싸는 박스-->
+    <section class="menu-area container">
+      <div class="menu-area__logo">
+        <img
+          src="https://cdn.discordapp.com/attachments/1262029239306158095/1263454109177217044/image-removebg-preview_1.png?ex=669a4ad5&is=6698f955&hm=2903f2f3f33ebc4416a4a41792759d7346907e9e7b982a419b1bcda39c748ed0&" />
+      </div>
+      <div class="menu-area__menu">
+        <div class="menu-area__menu-btn">
+          <i class="fa-solid fa-house"></i>
         </div>
-        <div class="menu-area__menu">
-          <div class="menu-area__menu-btn">
-            <i class="fa-solid fa-house"></i>
-          </div>
-          <div class="menu-area__menu-btn">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-          <div class="menu-area__menu-btn">
-            <i class="fa-solid fa-gear"></i>
-          </div>
-          <div class="menu-area__menu-btn">
-            <i class="fa-solid fa-arrow-right-from-bracket"></i>
-          </div>
+        <div class="menu-area__menu-btn">
+          <i class="fa-solid fa-bars"></i>
         </div>
-      </section>
-      <!--왼쪽 메뉴를 감싸는 박스-->
+        <div class="menu-area__menu-btn">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <div class="menu-area__menu-btn">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </div>
+      </div>
+    </section>
+    <!--왼쪽 메뉴를 감싸는 박스-->
 
     <!--오른쪽 콘텐츠 보여주는 박스-->
-    <section class="screen-area">
+    <section class="screen-area container">
       <div class="screen">
         <!-------------------------- 배경 이미지 및 검색 부분 ---------------------------->
         <div class="hero-section">
@@ -80,138 +79,177 @@
         </nav>
         <!---------------------네비게이션 바----------------------->
 
-        <!---------------------현재상영작----------------------->
+        <!----------------------캐러셀,예고편 컨테이너로 묶음----------------------->
+             <!--------------------현재상영작 캐러셀---------------------->
+        <div class="top-container">
+          <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="10000">
+                <div class="video-container">
+                  <video class="d-block w-100" id="video1" controls>
+                    <source src="/yuju/video/비포선라이즈.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="video-container">
+                  <video class="d-block w-100" id="video2" controls>
+                    <source src="/yuju/video/인사이드아웃1.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+              <div class="carousel-item">
+                <div class="video-container">
+                  <video class="d-block w-100" id="video3" controls>
+                    <source src="/yuju/video/위대한쇼맨.mp4" type="video/mp4">
+                  </video>
+                </div>
+                <div class="carousel-caption d-none d-md-block"></div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
-        <!---------------------현재상영작----------------------->
-
-        <!-------------------------- 예고편 부분---------------------------->
-        <div class="preview-section">
-          <div class="tab-content" id="popular">
-            <div class="preview-list" id="preview-list">
-              <div class="preview-item">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/ivpHW4MWho8"
-                  title="[데드풀과 울버린] 도파민 &#39;풀&#39; 충전 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>데드풀과 울버린</h3>
-                  <p>나야, 우리 꼭 6년 만이네..</p>
+          <!-------------------------- 예고편 부분---------------------------->
+          <div class="preview-section">
+            <div class="tab-content" id="popular">
+              <div class="preview-list" id="preview-list">
+                <div class="preview-item">
+                  <iframe width="1280" height="720" src="https://www.youtube.com/embed/ivpHW4MWho8"
+                    title="[데드풀과 울버린] 도파민 &#39;풀&#39; 충전 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>데드풀과 울버린</h3>
+                    <p>나야, 우리 꼭 6년 만이네..</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/Vb4TNEQXNTk"
-                  title="[파일럿] ✈️코미디의 정석✈️ 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>파일럿</h3>
-                  <p>엥 조정석 왜 이렇게 예뻐;;</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/Vb4TNEQXNTk"
+                    title="[파일럿] ✈️코미디의 정석✈️ 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>파일럿</h3>
+                    <p>엥 조정석 왜 이렇게 예뻐;;</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/Hx7evMlyejs"
-                  title="[트위스터스]  파이널 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>트위스터스</h3>
-                  <p>역대급 토네이도와의 정면승부</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/Hx7evMlyejs"
+                    title="[트위스터스]  파이널 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>트위스터스</h3>
+                    <p>역대급 토네이도와의 정면승부</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/mAHiT4Rny2M"
-                  title="[베테랑2] 인터내셔널 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>베테랑2</h3>
-                  <p>드디어..≪베테랑2≫</p>
+                <div class="preview-item">
+                  <iframe width="1280" height="720" src="https://www.youtube.com/embed/mAHiT4Rny2M"
+                    title="[베테랑2] 인터내셔널 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>베테랑2</h3>
+                    <p>드디어..≪베테랑2≫</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/BtzjUN9346w"
-                  title="[캡틴 아메리카: 브레이브 뉴 월드] 티저 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>캡틴아메리카:브레이브 뉴 월드</h3>
-                  <p>레드 헐크 떴다!!!!</p>
+                <div class="preview-item">
+                  <iframe width="1280" height="720" src="https://www.youtube.com/embed/BtzjUN9346w"
+                    title="[캡틴 아메리카: 브레이브 뉴 월드] 티저 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>캡틴아메리카:브레이브 뉴 월드</h3>
+                    <p>레드 헐크 떴다!!!!</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/WpnTl2nllO4" title="[스마일 2] 1차 예고편"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>스마일2</h3>
-                  <p>곧 다시 웃게 될 거야...</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/WpnTl2nllO4"
+                    title="[스마일 2] 1차 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>스마일2</h3>
+                    <p>곧 다시 웃게 될 거야...</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/oCjnThQNEX8"
-                  title="[콰이어트 플레이스: 첫째 날] 2차 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>콰이어트 플레이스:첫째날</h3>
-                  <p>쉿! 입다더 이스키</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/oCjnThQNEX8"
+                    title="[콰이어트 플레이스: 첫째 날] 2차 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>콰이어트 플레이스:첫째날</h3>
+                    <p>쉿! 입다더 이스키</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/drKYkxmuEiU"
-                  title="[핸섬가이즈  Handsome Guys] 1차 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>핸섬가이즈</h3>
-                  <p>고자극 오싹 코미디!</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/drKYkxmuEiU"
+                    title="[핸섬가이즈 Handsome Guys] 1차 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>핸섬가이즈</h3>
+                    <p>고자극 오싹 코미디!</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/N3q6YYjnI70"
-                  title="[명탐정 코난: 100만 달러의 펜타그램] 메인 예고편 (더빙) 공개! | 7월 17일 대개봉 | 더빙/자막 동시개봉 | 극장판 명탐정 코난" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>명탐정 코난</h3>
-                  <p>백만달러의 펜타그램</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/N3q6YYjnI70"
+                    title="[명탐정 코난: 100만 달러의 펜타그램] 메인 예고편 (더빙) 공개! | 7월 17일 대개봉 | 더빙/자막 동시개봉 | 극장판 명탐정 코난"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>명탐정 코난</h3>
+                    <p>백만달러의 펜타그램</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/9br0nh4mGI4" title="[하이재킹] 1차 예고편"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>하이재킹</h3>
-                  <p>지금부터 이 비행기!! 이북간다</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/9br0nh4mGI4" title="[하이재킹] 1차 예고편"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>하이재킹</h3>
+                    <p>지금부터 이 비행기!! 이북간다</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="1280" height="720" src="https://www.youtube.com/embed/yowWyxS5rXc"
-                  title="[베놈: 라스트 댄스] 런칭 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>베놈:라스트댄스</h3>
-                  <p>죽음이 갈라놓을 때까지</p>
+                <div class="preview-item">
+                  <iframe width="1280" height="720" src="https://www.youtube.com/embed/yowWyxS5rXc"
+                    title="[베놈: 라스트 댄스] 런칭 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>베놈:라스트댄스</h3>
+                    <p>죽음이 갈라놓을 때까지</p>
+                  </div>
                 </div>
-              </div>
-              <div class="preview-item">
-                <iframe width="914" height="514" src="https://www.youtube.com/embed/pMAPj6WVsT4"
-                  title="나쁜 놈들 제대로 뽀개버린다! [범죄도시4] 메인 예고편" frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div class="preview-info">
-                  <h3>범죄도시4</h3>
-                  <p>또 못살게 구네!?</p>
+                <div class="preview-item">
+                  <iframe width="914" height="514" src="https://www.youtube.com/embed/pMAPj6WVsT4"
+                    title="나쁜 놈들 제대로 뽀개버린다! [범죄도시4] 메인 예고편" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                  <div class="preview-info">
+                    <h3>범죄도시4</h3>
+                    <p>또 못살게 구네!?</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <!-------------------------- 예고편 부분---------------------------->
+        <!------------------------캐러셀,예고편 컨테이너로 묶음------------------------->
 
         <!-------------------------- 영화카드 부분-------------------------------->
         <section class="container">
@@ -235,6 +273,7 @@
     <footer></footer>
     <!-------------------------- 푸터 부분-------------------------------->
   </div>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>
