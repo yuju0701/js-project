@@ -3,6 +3,7 @@
 @import url(recommend.css);
 @import url(lastest-movie.css);
 @import url(nav.css);
+@import url(footer.css);
 
 @font-face {
   font-family: "BMJUA";
@@ -249,10 +250,10 @@ nav ul li a:hover {
   object-fit: cover;
   border-radius: 20px;
 }
-.carousel slide{
+.carousel slide {
   border-radius: 20px;
 }
-.carousel-control-prev-icon, 
+.carousel-control-prev-icon,
 .carousel-control-next-icon {
   display: none;
   background-color: rgba(0, 0, 0, 0.5);
