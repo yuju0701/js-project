@@ -229,7 +229,7 @@ nav ul li a:hover {
   height: 100%;
   width: 100%;
   border-radius: 25px;
-  z-index: 3; /* 비디오를 캐러셀 컨트롤보다 앞에 위치 */
+  z-index: 4; /* 비디오를 캐러셀 컨트롤보다 앞에 위치 */
 }
 
 .carousel-item,
@@ -238,7 +238,7 @@ nav ul li a:hover {
 .carousel-item-prev {
   height: 450px; /* 원하는 높이로 설정 */
   border-radius: 30px;
-  z-index: 2; /* 비디오를 캐러셀 컨트롤보다 앞에 위치 */
+  z-index: 3; /* 비디오를 캐러셀 컨트롤보다 앞에 위치 */
 }
 
 .thumbnail {
