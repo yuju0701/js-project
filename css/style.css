@@ -346,3 +346,17 @@ nav ul li a:hover {
   height: 500px;
   margin-left: 30px;
 }
+
+.slider1 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  cursor: pointer;
+}
+
+.slider2 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  cursor: pointer;
+}
