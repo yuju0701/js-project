@@ -321,7 +321,7 @@ const recommendRender = (movies) => {
         
             
               <img src="${poster?`https://image.tmdb.org/t/p/original${poster}`: defaultImage}" alt="포스터">
-              "<p>포스터 이미지가 없습니다.</p>"
+              
           <div class="recommend__title-area">
               <p>${title}</p>
             </div>
