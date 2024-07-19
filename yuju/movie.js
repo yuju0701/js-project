@@ -113,6 +113,8 @@ window.onload = () => {
 
   getPopularMovie();
   popularMovieClick.classList.add('active-btn');
+  detailSlider('slider1');
+  detailSlider('slider2');
 };
 
 //캐러셀 영화재생

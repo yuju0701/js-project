@@ -366,3 +366,16 @@ nav ul li a:hover {
   color: black;
   background-color: white;
 }
+.slider1 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  cursor: pointer;
+}
+
+.slider2 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  cursor: pointer;
+}
