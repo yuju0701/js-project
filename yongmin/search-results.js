@@ -79,13 +79,15 @@ const render = (movies) => {
     const movieDiv = document.createElement("div");
     movieDiv.innerHTML = `
       <div class="search-result">
-        <div class="col-lg-2 search-result__img">
-          <img src="${
-            poster
-              ? `https://image.tmdb.org/t/p/w200${poster}`
-              : "./JeongChan/No img.png"
-          }" alt="${title} 포스터">
-        </div>
+        <div onclick="openDetailPage(${
+          movie.id
+        })" class="col-lg-2 search-result__img">
+      
+         
+           '<img src="${poster ? `https://image.tmdb.org/t/p/w200${poster}` : './JeongChan/No img.png'}" alt="${title} 포스터">'
+
+         
+      </div>
         <div class="col-lg-10 search-result__content">
           <div class="search-result__content-title">
             <h2>${title}</h2> <span>(${originalTitle || originalName})</span>
@@ -97,6 +99,14 @@ const render = (movies) => {
     `;
     searchBoard.appendChild(movieDiv);
   });
+};
+
+// 상세페이지 열기
+const openDetailPage = (movieID) => {
+  const url =
+    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+  // window.location.href = url;
+  window.open(url, "_blank");
 };
 
 document.addEventListener("DOMContentLoaded", () => {

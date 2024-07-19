@@ -4,6 +4,8 @@ const apiKey = "ab46da0ed92dee984ca09983132ee090";
 // 기본 URL + API key
 const url = `https://api.themoviedb.org/3/api_key=${apiKey}&language=ko-KR`;
 
+const defaultImage = './mingjeong/No img.png';
+
 // 개봉일 날짜 - 빼고 년월일 넣는 함수
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -30,6 +32,7 @@ const getLatestMovie = async () => {
 
   const response = await fetch(latestURL, options);
   const data = await response.json();
+  document.getElementById("latest-movie-board").innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const latestMovie = data.results[i];
     latestMovieRender(latestMovie);
@@ -40,15 +43,14 @@ const getLatestMovie = async () => {
 const latestMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let latestHTML = `
-    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
-        ${
-          movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" ;
-">`
-            : "<p>포스터 이미지가 없습니다.</p>"
-        }
-        <h1>${movie.title}</h1>
-        <p>${formattedDate}</p>
+    <div class = "MovieInfo slide" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})" draggable="false">
+
+            <img src="${movie.poster_path?`https://image.tmdb.org/t/p/w200${movie.poster_path}`: defaultImage}" draggable="false" alt="${movie.title} 포스터" ;">
+
+        
+        <h1 draggable="false">${movie.title}</h1>
+        <p draggable="false">${formattedDate}</p>
+    
     </div>
     `;
   document.getElementById("latest-movie-board").innerHTML += latestHTML;
@@ -68,6 +70,7 @@ const getPopularMovie = async () => {
 
   const response = await fetch(popularURL, options);
   const data = await response.json();
+  document.getElementById("popular-movie-board").innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const popularMovie = data.results[i];
     popularMovieRender(popularMovie);
@@ -78,24 +81,52 @@ const getPopularMovie = async () => {
 const popularMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let popularHTML = `
-    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
-        ${
-          movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터";
-">`
-            : "<p>포스터 이미지가 없습니다.</p>"
-        }
-        <h1>${movie.title}</h1>
-        <p>${formattedDate}</p>
+    <div class = "MovieInfo slide" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})" draggable="false">
+
+            <img src="${movie.poster_path?`https://image.tmdb.org/t/p/w200${movie.poster_path}`: defaultImage}" draggable="false" alt="${movie.title} 포스터";">
+
+        <h1 draggable="false">${movie.title}</h1>
+        <p draggable="false">${formattedDate}</p>
     </div>
     `;
   document.getElementById("popular-movie-board").innerHTML += popularHTML;
 };
 
 window.onload = () => {
-  getLatestMovie();
+  let latestMovieClick = document.getElementById("latest-Movie-btn");
+  let popularMovieClick = document.getElementById("popular-Movie-btn");
+  
+  latestMovieClick.addEventListener('click', () => {
+    document.getElementById("popular-movie-board").innerHTML = "";
+    getLatestMovie();
+    latestMovieClick.classList.add('active-btn');
+    popularMovieClick.classList.remove('active-btn');
+  });
+
+ 
+  popularMovieClick.addEventListener('click', () => {
+    document.getElementById("latest-movie-board").innerHTML = ""
+    getPopularMovie();
+    popularMovieClick.classList.add('active-btn');
+    latestMovieClick.classList.remove('active-btn');
+  });
+
   getPopularMovie();
+  popularMovieClick.classList.add('active-btn');
+  detailSlider('slider1');
+  detailSlider('slider2');
 };
+
+document.querySelector('.menu-area__menu-btn').addEventListener('click', function() {
+    // 윈도우 닫기 시도
+    window.close();
+
+    // 만약 window.close()가 브라우저 보안 설정 때문에 동작하지 않을 경우
+    // 경고창을 띄운다
+    if (!window.closed) {
+      alert("브라우저 보안 설정으로 인해 페이지를 닫을 수 없습니다. 창을 직접 닫아주세요.");
+    }
+  });
 
 //캐러셀 영화재생
 document.addEventListener('DOMContentLoaded', function () {
@@ -163,11 +194,50 @@ document.addEventListener('DOMContentLoaded', function () {
   startAutoScroll();
 });
 
+document.getElementById('close-icon').addEventListener('click', function() {
+    // 윈도우 닫기 시도
+    window.close();
+
+    // 만약 window.close()가 브라우저 보안 설정 때문에 동작하지 않을 경우
+    // 경고창을 띄운다
+    if (!window.closed) {
+      alert("브라우저 보안 설정으로 인해 페이지를 닫을 수 없습니다. 창을 직접 닫아주세요.");
+    }
+  });
 
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
   const url =
-    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+    "./JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
   // window.location.href = url;
   window.open(url, "_blank");
+};
+
+function detailSlider(className) {
+  const slider = document.querySelector(`.${className}`);
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', function(e) {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', function() {
+    isDown = false;
+  });
+
+  slider.addEventListener('mouseup', function() {
+    isDown = false;
+  });
+
+  slider.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // 드래그 이동 거리에 따라 2배 속도로 슬라이드 이동
+    slider.scrollLeft = scrollLeft - walk;
+  });
 };
