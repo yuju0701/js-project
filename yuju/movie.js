@@ -30,6 +30,7 @@ const getLatestMovie = async () => {
 
   const response = await fetch(latestURL, options);
   const data = await response.json();
+  document.getElementById("latest-movie-board").innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const latestMovie = data.results[i];
     latestMovieRender(latestMovie);
@@ -68,6 +69,7 @@ const getPopularMovie = async () => {
 
   const response = await fetch(popularURL, options);
   const data = await response.json();
+  document.getElementById("popular-movie-board").innerHTML = "";
   for (let i = 0; i < 10; i++) {
     const popularMovie = data.results[i];
     popularMovieRender(popularMovie);
@@ -93,8 +95,26 @@ const popularMovieRender = (movie) => {
 };
 
 window.onload = () => {
-  getLatestMovie();
+  let latestMovieClick = document.getElementById("latest-Movie-btn");
+  let popularMovieClick = document.getElementById("popular-Movie-btn");
+  
+  latestMovieClick.addEventListener('click', () => {
+    document.getElementById("popular-movie-board").innerHTML = "";
+    getLatestMovie();
+    latestMovieClick.classList.add('active-btn');
+    popularMovieClick.classList.remove('active-btn');
+  });
+
+ 
+  popularMovieClick.addEventListener('click', () => {
+    document.getElementById("latest-movie-board").innerHTML = ""
+    getPopularMovie();
+    popularMovieClick.classList.add('active-btn');
+    latestMovieClick.classList.remove('active-btn');
+  });
+
   getPopularMovie();
+  popularMovieClick.classList.add('active-btn');
 };
 
 //캐러셀 영화재생
