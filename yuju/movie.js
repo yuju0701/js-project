@@ -113,7 +113,20 @@ window.onload = () => {
 
   getPopularMovie();
   popularMovieClick.classList.add('active-btn');
+  detailSlider('slider1');
+  detailSlider('slider2');
 };
+
+document.querySelector('.menu-area__menu-btn').addEventListener('click', function() {
+    // 윈도우 닫기 시도
+    window.close();
+
+    // 만약 window.close()가 브라우저 보안 설정 때문에 동작하지 않을 경우
+    // 경고창을 띄운다
+    if (!window.closed) {
+      alert("브라우저 보안 설정으로 인해 페이지를 닫을 수 없습니다. 창을 직접 닫아주세요.");
+    }
+  });
 
 //캐러셀 영화재생
 document.addEventListener('DOMContentLoaded', function () {
@@ -181,6 +194,16 @@ document.addEventListener('DOMContentLoaded', function () {
   startAutoScroll();
 });
 
+document.getElementById('close-icon').addEventListener('click', function() {
+    // 윈도우 닫기 시도
+    window.close();
+
+    // 만약 window.close()가 브라우저 보안 설정 때문에 동작하지 않을 경우
+    // 경고창을 띄운다
+    if (!window.closed) {
+      alert("브라우저 보안 설정으로 인해 페이지를 닫을 수 없습니다. 창을 직접 닫아주세요.");
+    }
+  });
 
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
