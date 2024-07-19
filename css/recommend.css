@@ -9,7 +9,7 @@
   display: flex;
   flex-wrap: wrap; /* 여러 줄로 나열되도록 설정 */
   justify-content: center; /* 중앙 정렬 */
-  gap: 20px; /* 아이템 간의 간격 설정 */
+  gap: 30px; /* 아이템 간의 간격 설정 */
 }
 
 .recommend-container {
@@ -19,7 +19,9 @@
 .recommend-board > div {
   flex: 0 0 calc(50% - 20px); /* 각 아이템의 너비를 50%로 설정하고, 간격을 고려하여 너비 계산 */
   box-sizing: border-box; /* 패딩과 보더를 포함한 전체 너비를 설정 */
-  max-width: 300px; /* 원래 이미지 크기를 유지하도록 최대 너비 설정 */
+  max-width: 45%; /* 원래 이미지 크기를 유지하도록 최대 너비 설정 */
+  display: flex;
+  justify-content: center;
 }
 
 .recommend-board img {

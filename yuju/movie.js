@@ -4,6 +4,8 @@ const apiKey = "ab46da0ed92dee984ca09983132ee090";
 // 기본 URL + API key
 const url = `https://api.themoviedb.org/3/api_key=${apiKey}&language=ko-KR`;
 
+const defaultImage = './mingjeong/No img.png';
+
 // 개봉일 날짜 - 빼고 년월일 넣는 함수
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -41,15 +43,14 @@ const getLatestMovie = async () => {
 const latestMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let latestHTML = `
-    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
-        ${
-          movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-">`
-            : "<p>포스터 이미지가 없습니다.</p>"
-        }
-        <h1>${movie.title}</h1>
-        <p>${formattedDate}</p>
+    <div class = "MovieInfo slide" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})" draggable="false">
+
+            <img src="${movie.poster_path?`https://image.tmdb.org/t/p/w200${movie.poster_path}`: defaultImage}" draggable="false" alt="${movie.title} 포스터" ;">
+
+        
+        <h1 draggable="false">${movie.title}</h1>
+        <p draggable="false">${formattedDate}</p>
+    
     </div>
     `;
   document.getElementById("latest-movie-board").innerHTML += latestHTML;
@@ -80,15 +81,12 @@ const getPopularMovie = async () => {
 const popularMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let popularHTML = `
-    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
-        ${
-          movie.poster_path
-            ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-">`
-            : "<p>포스터 이미지가 없습니다.</p>"
-        }
-        <h1>${movie.title}</h1>
-        <p>${formattedDate}</p>
+    <div class = "MovieInfo slide" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})" draggable="false">
+
+            <img src="${movie.poster_path?`https://image.tmdb.org/t/p/w200${movie.poster_path}`: defaultImage}" draggable="false" alt="${movie.title} 포스터";">
+
+        <h1 draggable="false">${movie.title}</h1>
+        <p draggable="false">${formattedDate}</p>
     </div>
     `;
   document.getElementById("popular-movie-board").innerHTML += popularHTML;
@@ -187,7 +185,36 @@ document.addEventListener('DOMContentLoaded', function () {
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
   const url =
-    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+    "./JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
   // window.location.href = url;
   window.open(url, "_blank");
+};
+
+function detailSlider(className) {
+  const slider = document.querySelector(`.${className}`);
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', function(e) {
+    isDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+
+  slider.addEventListener('mouseleave', function() {
+    isDown = false;
+  });
+
+  slider.addEventListener('mouseup', function() {
+    isDown = false;
+  });
+
+  slider.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 2; // 드래그 이동 거리에 따라 2배 속도로 슬라이드 이동
+    slider.scrollLeft = scrollLeft - walk;
+  });
 };

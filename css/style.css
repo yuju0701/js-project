@@ -3,6 +3,7 @@
 @import url(recommend.css);
 @import url(lastest-movie.css);
 @import url(relatedSearch.css);
+@import url(nav.css);
 
 @font-face {
   font-family: "BMJUA";
@@ -20,6 +21,7 @@ body {
   /*https://images4.alphacoders.com/134/1348313.png*/
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .main {
@@ -97,7 +99,6 @@ nav {
   /*background-color: #5e95f3;*/
   padding: 10px 20px;
   width: 100%; /* 섹션 크기를 줄이기 */
-  max-width: 1285px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-radius: 10px;
 }
@@ -286,9 +287,9 @@ nav ul li a:hover {
   overflow-y: auto; /* 수직 스크롤 활성화 */
   overflow-x: hidden; /* 수평 스크롤 비활성화 */
   height: 500px; /* 원하는 높이로 설정 */
-   /* 스크롤바 숨기기 */
-   -ms-overflow-style: none;  /* IE and Edge */
-   scrollbar-width: none;  /* Firefox */
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .preview-item {
@@ -327,6 +328,24 @@ nav ul li a:hover {
 .preview-list {
   display: flex;
   overflow-x: hidden; /* 스크롤바 숨기기 */
+}
+
+.screen__up-page {
+  display: flex;
+  justify-content: center;
+}
+
+.now-playing {
+  width: 60%;
+  background-color: tomato;
+  height: 500px;
+}
+
+.preview {
+  background-color: tomato;
+  width: 25%;
+  height: 500px;
+  margin-left: 30px;
 }
 
 #latest-Movie-btn, #popular-Movie-btn {
