@@ -39,7 +39,7 @@
 
     <!--오른쪽 콘텐츠 보여주는 박스-->
     <section class="screen-area container">
-      <div class="screen">
+      <div class="screen" draggable="false">
         <!-------------------------- 배경 이미지 및 검색 부분 ---------------------------->
         <div class="hero-section">
           <div class="hero-content">
@@ -254,16 +254,16 @@
         <!------------------------캐러셀,예고편 컨테이너로 묶음------------------------->
 
         <!-------------------------- 영화카드 부분-------------------------------->
-        <section class="container">
-          <button id="popular-Movie-btn">인기 영화</button><button id="latest-Movie-btn">최신 영화</button>
-          <div class="popular-movie">
-            <div>
-              <section id="popular-movie-board"></section>
+        <section class="container" draggable="false">
+          <button id="popular-Movie-btn" draggable="false">인기 영화</button><button id="latest-Movie-btn" draggable="false">최신 영화</button>
+          <div class="popular-movie" draggable="false">
+            <div draggable="false">
+              <section id="popular-movie-board" class="slider1" draggable="false"></section>
             </div>
           </div>
-          <div class="latest-movie">
-            <div>
-              <section id="latest-movie-board"></section>
+          <div class="latest-movie" draggable="false">
+            <div draggable="false">
+              <section id="latest-movie-board" class="slider2" draggable="false"></section>
             </div>
           </div>
         </section>
