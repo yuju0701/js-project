@@ -40,7 +40,7 @@ const getLatestMovie = async () => {
 const latestMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let latestHTML = `
-    <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
+    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
         ${
           movie.poster_path
             ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -78,7 +78,7 @@ const getPopularMovie = async () => {
 const popularMovieRender = (movie) => {
   const formattedDate = formatDate(movie.release_date);
   let popularHTML = `
-    <div class = "MovieInfo" onclick="openDetailPage(${movie.id})">
+    <div class = "MovieInfo" data-movie-id="${movie.id}" onclick="openDetailPage(${movie.id})">
         ${
           movie.poster_path
             ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터" style="width: 200px; height: 300px; border-radius: 5%; border-radius: 5%; border: 0.01px solid gray; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -96,6 +96,43 @@ window.onload = () => {
   getLatestMovie();
   getPopularMovie();
 };
+
+//캐러셀 영화재생
+document.addEventListener('DOMContentLoaded', function () {
+    var carouselElement = document.querySelector('#carouselExampleInterval');
+    var carousel = new bootstrap.Carousel(carouselElement, {
+      interval: 25000 // 캐러셀 자동 슬라이드 속도 설정 (25초)
+    });
+
+    document.querySelectorAll('.carousel-item video').forEach(video => {
+      video.addEventListener('play', function() {
+        // 비디오가 재생되면 캐러셀 멈춤
+        carousel.pause();
+      });
+
+      video.addEventListener('pause', function() {
+        // 비디오가 일시 정지되면 캐러셀 재시작
+        if (video.currentTime !== video.duration) {
+          carousel.cycle();
+        }
+      });
+
+      video.addEventListener('ended', function() {
+        // 비디오가 끝나면 처음 화면으로 돌아감
+        video.currentTime = 0;
+        carousel.next();
+        carousel.cycle();
+      });
+    });
+
+    // 캐러셀 슬라이드 시 모든 비디오 일시 정지
+    carouselElement.addEventListener('slide.bs.carousel', function () {
+      document.querySelectorAll('.carousel-item video').forEach(video => {
+        video.pause();
+      });
+    });
+  });
+
 
 // 예고편 스크롤
 document.addEventListener('DOMContentLoaded', function () {
@@ -125,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   startAutoScroll();
 });
+
 
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
