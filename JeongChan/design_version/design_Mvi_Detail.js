@@ -230,7 +230,7 @@ function displayCredits(cast) {
             <img src="${actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : defaultImage}" 
                  alt="${actor.name} 사진 " 
                  onerror="this.onerror=null;this.src='${defaultImage}';" draggable="false";/>
-            <div class="cast-details draggable="false";">
+            <div class="cast-details" draggable="false";>
               <p class="cast-name" draggable="false";>${actor.name}</p>
               <p class="cast-character" draggable="false";>${actor.character}</p>
             </div>
@@ -315,21 +315,23 @@ const recommendRender = (movies) => {
     const title = movie.title || movie.name;
 
     const recommendDiv = document.createElement("div");
+    if(poster){
     recommendDiv.innerHTML = `
-        <div class="recommend-container">
-        ${
-          poster
-            ? `<img src="https://image.tmdb.org/t/p/w200${poster}" alt="포스터">`
-            : "<p>포스터 이미지가 없습니다.</p>"
-        } <div class="recommend__title-area">
-            <p>${title}</p>
+          <div class="recommend-container">
+        
+            
+              <img src="${poster?`https://image.tmdb.org/t/p/w200${poster}`: defaultImage}" alt="포스터">
+              "<p>포스터 이미지가 없습니다.</p>"
+          <div class="recommend__title-area">
+              <p>${title}</p>
+            </div>
           </div>
-        </div>
-            `;
-    recommendDiv.addEventListener('click', function() {
-      detailMovieSearch(movie.id);
-    });
-    recommendBoard.appendChild(recommendDiv);
+              `;
+      recommendDiv.addEventListener('click', function() {
+        detailMovieSearch(movie.id);
+      });
+      recommendBoard.appendChild(recommendDiv);
+    }
   });
 };
 
