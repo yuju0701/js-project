@@ -68,7 +68,7 @@ const render = (movies) => {
     const movieDiv = document.createElement("div");
     movieDiv.innerHTML = `
       <div class="search-result">
-        <div onclick="recommendation(${
+        <div onclick="openDetailPage(${
           movie.id
         })" class="col-lg-2 search-result__img">
       
@@ -88,6 +88,14 @@ const render = (movies) => {
             `;
     searchBoard.appendChild(movieDiv);
   });
+};
+
+// 상세페이지 열기
+const openDetailPage = (movieID) => {
+  const url =
+    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+  // window.location.href = url;
+  window.open(url, "_blank");
 };
 
 //추천 영화 데이터를 가져오는 함수
