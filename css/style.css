@@ -259,3 +259,15 @@ nav ul li a:hover {
   display: flex;
   overflow-x: hidden; /* 스크롤바 숨기기 */
 }
+
+.slider1 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.slider2 {
+  /* 스크롤바 숨기기 */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

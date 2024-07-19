@@ -230,7 +230,7 @@ function displayCredits(cast) {
             <img src="${actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : defaultImage}" 
                  alt="${actor.name} 사진 " 
                  onerror="this.onerror=null;this.src='${defaultImage}';" draggable="false";/>
-            <div class="cast-details draggable="false";">
+            <div class="cast-details" draggable="false";>
               <p class="cast-name" draggable="false";>${actor.name}</p>
               <p class="cast-character" draggable="false";>${actor.character}</p>
             </div>
