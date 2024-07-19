@@ -19,9 +19,39 @@
   </head>
 
   <body>
+    <nav class="top-nav">
+      <div class="top-navbar-container">
+        <a href="#" class="top-navbar-brand" aria-label="MOVIEFIX home page">
+          <img src="./minjeong/Logo.png" alt="MOVIEFIX Logo" />
+          MOVIEFIX
+        </a>
+        <div class="top-navbarNav">
+          <ul class="top-navbar-nav">
+            <li class="top-nav-item">
+              <a href="#" class="top-nav-link" aria-label="About page">About</a>
+            </li>
+            <li class="top-nav-item">
+              <a href="#" class="top-nav-link" aria-label="Community page"
+                >Community</a
+              >
+            </li>
+            <li class="top-nav-item">
+              <a href="#" class="top-nav-link" aria-label="Subscriptions page"
+                >Subscriptions</a
+              >
+            </li>
+            <li class="top-nav-item">
+              <a href="#" class="top-nav-link" aria-label="Contact page"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="main">
       <!--왼쪽 메뉴를 감싸는 박스-->
-      <section class="menu-area">
+      <section class="menu-area container">
         <div class="menu-area__logo">
           <img
             src="https://cdn.discordapp.com/attachments/1262029239306158095/1263454109177217044/image-removebg-preview_1.png?ex=669a4ad5&is=6698f955&hm=2903f2f3f33ebc4416a4a41792759d7346907e9e7b982a419b1bcda39c748ed0&"
@@ -45,7 +75,7 @@
       <!--왼쪽 메뉴를 감싸는 박스-->
 
       <!--오른쪽 콘텐츠 보여주는 박스-->
-      <section class="screen-area">
+      <section class="screen-area container">
         <div class="screen">
           <!-------------------------- 배경 이미지 및 검색 부분 ---------------------------->
           <div class="hero-section">
@@ -57,6 +87,9 @@
                   type="text"
                   placeholder="검색어를 입력해주세요"
                 />
+                <!-- 연관 검색어 부분 -->
+                <div id="suggestions"></div>
+                <!--  -->
                 <button type="submit" class="search-button">Search</button>
               </form>
             </div>
