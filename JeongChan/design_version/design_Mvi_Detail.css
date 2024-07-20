@@ -356,4 +356,10 @@ body {
 
 .recommend-container {
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.recommend-container:hover {
+  transform: scale(1.1);
+}
+
