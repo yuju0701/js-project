@@ -25,6 +25,7 @@ const recommendRender = (movies) => {
 
     const recommendDiv = document.createElement("div");
     recommendDiv.innerHTML = `
+    <div>추천 영화</div><div></div>
           <div class="recommend-container"onclick="recommendation(${movie.id})">
           ${
             poster
