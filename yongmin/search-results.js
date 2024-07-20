@@ -34,6 +34,7 @@ const search = async (event) => {
   event.preventDefault();
   const query = document.querySelector("#search-input__result").value;
   console.log(query); // 검색어 확인
+  let searchValue = document.getElementById("search-input__result").value;
 
   page = 1; // 새로운 검색 시 페이지 번호를 1로 초기화
   searchUrl.searchParams.set("query", query);
@@ -51,6 +52,7 @@ const search = async (event) => {
   localStorage.setItem("totalResults", totalResults);
   localStorage.setItem("currentPage", page);
   localStorage.setItem("query", query);
+  console.log(searchValue);
   render(searchResultList);
   paginationRender();
 
@@ -88,7 +90,11 @@ const render = (movies) => {
         })" class="col-lg-2 search-result__img">
       
          
-           '<img src="${poster ? `https://image.tmdb.org/t/p/w200${poster}` : './JeongChan/No img.png'}" alt="${title} 포스터">'
+           '<img src="${
+             poster
+               ? `https://image.tmdb.org/t/p/w200${poster}`
+               : "./JeongChan/No img.png"
+           }" alt="${title} 포스터">'
 
          
       </div>
@@ -108,7 +114,8 @@ const render = (movies) => {
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
   const url =
-    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" + encodeURIComponent(movieID);
+    "../JeongChan/design_version/design_Mvi_Detail.html?movieID=" +
+    encodeURIComponent(movieID);
   // window.location.href = url;
   window.open(url, "_blank");
 };
@@ -126,6 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
     searchUrl.searchParams.set("query", storedQuery);
     searchUrl.searchParams.set("language", "ko-KR");
     searchUrl.searchParams.set("page", page);
+    document.getElementById("search-input__result").value;
+    console.log(searchValue);
     render(searchResultList);
     paginationRender();
   }
