@@ -1,5 +1,89 @@
-@media screen and (min-width <=600) {
+@media screen and (max-width: 767px) {
   .menu-area {
     display: none;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menu-area {
+    width: 25%;
+    padding-left: 100px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .screen-area {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .screen {
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 50px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .screen-area {
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+
+  .screen {
+    padding: 25px;
+    border-radius: 75px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .search-input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .search-button {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .search-input {
+    font-size: 15px;
+  }
+
+  .search-button {
+    font-size: 15px;
+    padding: 8px 15px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel {
+    max-width: 100%;
+    max-height: 50%;
+  }
+
+  .preview-section {
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+  }
+
+  .preview-item {
+    margin: 5px 0;
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .carousel {
+    max-width: 80%;
+    max-height: 60%;
+  }
+
+  .preview-section {
+    width: 45%;
   }
 }
