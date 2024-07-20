@@ -43,7 +43,7 @@ const displaySuggestions = (movies) => {
         const li = document.createElement('li');
         li.className = 'suggestion';
         li.textContent = movie.title;
-        li.addEventListener('click', function(event) {
+        li.addEventListener('mousedown', function(event) {
             document.getElementById('search-input__result').value = movie.title;
             container.innerHTML = ''; 
         });
