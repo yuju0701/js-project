@@ -330,11 +330,40 @@ const recommendRender = (movies) => {
       recommendDiv.addEventListener('click', function() {
         this.querySelector('.check-image').style.opacity = 1;
         detailMovieSearch(movie.id);
+
+
+        let recommendDivPosition = this.offsetTop;
+
+        recommendBoard.scrollTop = recommendDivPosition;
+        // smoothScrollTo(recommendBoard, recommendDivPosition, 1000);
       });
       recommendBoard.appendChild(recommendDiv);
     }
   });
 };
+
+// 스크롤 애니메이션 함수
+function smoothScrollTo(element, target, duration) {
+  let start = element.scrollTop;
+  let change = target - start;
+  let startTime = performance.now();
+
+  function animateScroll(currentTime) {
+      let timeElapsed = currentTime - startTime;
+      let progress = Math.min(timeElapsed / duration, 1);
+      element.scrollTop = start + change * easeInOutQuad(progress);
+
+      if (timeElapsed < duration) {
+          requestAnimationFrame(animateScroll);
+      }
+  }
+
+  function easeInOutQuad(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+  }
+
+  requestAnimationFrame(animateScroll);
+}
 
 
 detailMovieSearch(movieID);
