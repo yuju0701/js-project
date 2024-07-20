@@ -334,8 +334,8 @@ const recommendRender = (movies) => {
 
         let recommendDivPosition = this.offsetTop;
 
-        recommendBoard.scrollTop = recommendDivPosition;
-        // smoothScrollTo(recommendBoard, recommendDivPosition, 1000);
+        // recommendBoard.scrollTop = recommendDivPosition;
+        smoothScrollTo(recommendBoard, recommendDivPosition, 1000);
       });
       recommendBoard.appendChild(recommendDiv);
     }
