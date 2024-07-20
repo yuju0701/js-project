@@ -49,7 +49,7 @@ const latestMovieRender = (movie) => {
 
             <img src="${
               movie.poster_path
-                ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
                 : defaultImage
             }" draggable="false" alt="${movie.title} 포스터" ;">
 
@@ -93,7 +93,7 @@ const popularMovieRender = (movie) => {
 
             <img src="${
               movie.poster_path
-                ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
                 : defaultImage
             }" draggable="false" alt="${movie.title} 포스터";">
 
