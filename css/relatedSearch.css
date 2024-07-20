@@ -1,18 +1,23 @@
 /* 연관 검색어 css */
 #suggestions {
-    margin-top: 10px;
-    padding: 0;
-    list-style-type: none;
-    text-align: left;
-    width: 100%;
+  margin-top: 10px;
+  padding: 0;
+  list-style-type: none;
+  text-align: left;
+  width: 100%;
+  position: absolute;
+  top: 30px;
+  background-color: rgba(73, 73, 73, 0.8);
+  z-index: 99;
 }
 
 .suggestion {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  color: white;
 }
 
 .suggestion:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }

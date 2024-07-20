@@ -194,6 +194,7 @@ document.addEventListener('DOMContentLoaded', function () {
   startAutoScroll();
 });
 
+//나가기 버튼 클릭시 창닫기
 document.getElementById('close-icon').addEventListener('click', function() {
     // 윈도우 닫기 시도
     window.close();
