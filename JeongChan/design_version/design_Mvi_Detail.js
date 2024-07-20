@@ -47,7 +47,7 @@ const detailMovieSearch = async (ID) => {
       document.querySelector(".detail-release").textContent = response.release_date;
   
       response.genres.forEach((element) => {
-        tmp += `<a href="" data-id="${element.id}">${element.name}</a>`;
+        tmp += `<a href="#" data-id="${element.id}">${element.name}</a>`;
       });
       document.querySelector(".detail-genres").innerHTML = tmp;
       tmp = ``;
