@@ -42,6 +42,8 @@ const search = async (event) => {
   searchUrl.searchParams.set("include_adult", "false");
   searchUrl.searchParams.set("region", "KR");
 
+  document.getElementById('suggestions').innerHTML = '';
+
   const data = await getData(searchUrl);
   searchResultList = data.results;
   totalResults = data.total_results; // totalResults 값 설정
@@ -51,6 +53,8 @@ const search = async (event) => {
   localStorage.setItem("query", query);
   render(searchResultList);
   paginationRender();
+
+  document.getElementById('suggestions').innerHTML = '';
 };
 
 const render = (movies) => {

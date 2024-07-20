@@ -41,6 +41,8 @@ const search = async (event) => {
   searchResultList = data.results;
   totalResults = data.total_results; // totalResults 값 설정
 
+  document.getElementById('suggestions').innerHTML = '';
+
   console.log(data);
   console.log(searchResultList);
 
@@ -52,9 +54,11 @@ const search = async (event) => {
 
   // 검색 결과 페이지로 이동
   window.location.href = "search-results.html";
+
+  document.getElementById('suggestions').innerHTML = '';
 };
 
-document.querySelector("#search-form").addEventListener("submit", search);
+document.querySelector("#search-form").addEventListener("submit", search)
 
 // 연관 검색어 기능
 const MAX_RESULTS = 5; // 연관 검색어 개수
@@ -101,7 +105,7 @@ const displaySuggestions = (movies) => {
         const li = document.createElement('li');
         li.className = 'suggestion';
         li.textContent = movie.title;
-        li.addEventListener('click', function(event) {
+        li.addEventListener('mousedown', function(event) {
             document.getElementById('search-input').value = movie.title;
             container.innerHTML = ''; 
         });
