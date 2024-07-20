@@ -3,6 +3,9 @@ import API_TOKEN from "../config.js";
 let trailerUrl = "";
 let movieID = '653346'; // 1022789, 653346, 519182
 
+const apiKey = 'c6e6f258ddf01e890ce7dc0db97ee5d6';  // 발급받은 API 키를 여기에 입력하세요
+const defaultImage = '../No img.png';  // 출연진 사진이 없을 경우 사용할 기본 이미지 경로.
+
 // URL에서 쿼리 파라미터를 추출하는 함수
 function getQueryParameter() {
   const urlParams = new URLSearchParams(window.location.search);
@@ -57,6 +60,7 @@ const detailMovieSearch = async (ID) => {
       // document.querySelector(".detail-tagline").textContent = response.tagline;
   
       document.querySelector("#detail-overview").textContent = response.overview;
+      
 
       getYoutube(ID);
   
@@ -76,22 +80,32 @@ const detailMovieSearch = async (ID) => {
 }
 
 const getSlideImage = async (ID) => {
+  document.querySelector(".detail-image-slider input").checked = true;
+  document.querySelectorAll('.detail-image-slider label img').forEach(async (img) => {
+    img.src = '';
+  });
   await fetch(`https://api.themoviedb.org/3/movie/${ID}/images?`, options)
           .then(response => response.json())
           .then(response => {
             let j = 1;
             for (let i = 0; i < response.posters.length; i++) {
-              if(response.posters[i].aspect_ratio < 1.0){
+              if(response.posters[i]){
                 document.querySelector(`#slide${j} img`).src = `${pfxImage}${response.posters[i].file_path}`;
                 j++;
                 if (j >= 6) break;
               }
+            }
+            while(j <= 5) {
+              document.querySelector(`#slide${j} img`).src = defaultImage;
+              j++;
             }
           })
           .catch(err => console.error(err));
 }
 
 const getYoutube = async (ID) => {
+  let youtubeURL = document.querySelector(".detail-trailer iframe");
+  trailerUrl = '';
   await fetch(
     `https://api.themoviedb.org/3/movie/${ID}/videos?language=ko-KR`,
     options
@@ -104,9 +118,15 @@ const getYoutube = async (ID) => {
           response.results[i].type === "Trailer"
         ) {
           trailerUrl = `https://www.youtube.com/embed/${response.results[i].key}`;
-          document.querySelector(".detail-trailer iframe").src = trailerUrl;
+          youtubeURL.src = trailerUrl;
+          document.querySelector('.trailer-button').style.display = 'inline';
           break;
-        }
+        } 
+        
+      }
+      // 예고편이 없는 영화일 때
+      if(trailerUrl == '') {
+        document.querySelector('.trailer-button').style.display = 'none';
       }
     })
     .catch((err) => console.error(err));
@@ -118,10 +138,12 @@ function convertIntToTime(minutes) {
   return `${hours}h ${remainingMinutes}m`;
 }
 
-document.querySelector(".btn-close").addEventListener("click", function () {
+// 예고편 영상 껐을 때
+document.querySelector("#videoModal").addEventListener("hide.bs.modal", function () {
   document.querySelector("#videoModal iframe").src = "";
 });
 
+// 예고편 영상 다시 켰을 떄
 document
   .getElementById("videoModal")
   .addEventListener("show.bs.modal", function () {
@@ -133,8 +155,7 @@ document
 
 
 
-const apiKey = 'c6e6f258ddf01e890ce7dc0db97ee5d6';  // 발급받은 API 키를 여기에 입력하세요
-const defaultImage = '../No img.png';  // 출연진 사진이 없을 경우 사용할 기본 이미지 경로.
+
 
 // /**
 //  * 사용자가 입력한 검색어를 기반으로 영화를 검색하는 함수.
@@ -292,7 +313,7 @@ function detailSlider() {
 //추천 영화 데이터를 가져오는 함수
 const recommendation = async (id) => {
   const recommendUrl = new URL(
-    `https://api.themoviedb.org/3/movie/${id}/similar?language=ko-KR&page=1`
+    `https://api.themoviedb.org/3/movie/${id}/recommendations?language=ko-KR&page=1`
   );
   const response = await fetch(recommendUrl, options);
   const data = await response.json();
