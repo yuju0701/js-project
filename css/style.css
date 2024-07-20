@@ -363,8 +363,8 @@ nav ul li a:hover {
   font-size: 16px;
   border: none;
   border-radius: 5px;
-  background-color: #333;
-  color: white;
+  background-color: white;
+  color: #333;
   cursor: pointer;
 }
 
@@ -375,8 +375,8 @@ nav ul li a:hover {
 
 #latest-Movie-btn.active-btn,
 #popular-Movie-btn.active-btn {
-  color: black;
-  background-color: white;
+  color: white;
+  background-color: #333;
 }
 .slider1 {
   /* 스크롤바 숨기기 */
