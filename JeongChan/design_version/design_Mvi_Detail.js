@@ -319,8 +319,8 @@ const recommendRender = (movies) => {
     recommendDiv.innerHTML = `
           <div class="recommend-container">
         
-            
-              <img src="${poster?`https://image.tmdb.org/t/p/original${poster}`: defaultImage}" alt="포스터">
+            <img src="./check.png" class="check-image" alt="check"/>
+            <img src="${poster?`https://image.tmdb.org/t/p/original${poster}`: defaultImage}" class="poster-image" alt="포스터">
               
           <div class="recommend__title-area">
               <p>${title}</p>
@@ -328,6 +328,7 @@ const recommendRender = (movies) => {
           </div>
               `;
       recommendDiv.addEventListener('click', function() {
+        this.querySelector('.check-image').style.opacity = 1;
         detailMovieSearch(movie.id);
       });
       recommendBoard.appendChild(recommendDiv);
