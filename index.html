@@ -13,9 +13,14 @@
     integrity="sha512-gz4zvTevCibHmuCfP1sqL5fQoJssq3ELOVbOY/8dLWbgXpW3Sw7NbKVcE0gALJr3o5kAy1FV5J4Q3oVfEOexow=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="icon" type="image/png" href="css/favicon.png">
 </head>
 
-<body>
+<body> <!----------커버------->
+  <div id="cover">
+    <p>코딩알려주는 누나</p>
+    <button><img src="/css/Logo.png"></button>
+  </div>
   <!-- Top-navBer -->
   <div class="top-nav">
     <div class="navbar-container">
@@ -36,6 +41,35 @@
     </div>
   </div>
   <!-- Top-navBer -->
+  
+  <!-- 사이드 메뉴 햄버거 -->
+  <div id="ham-mySidenav" class="ham-side-menu">
+    <a href="javascript:void(0)" class="ham-side-close-btn" onclick="closeNavHam()">&times;</a>
+    <a href="#">홈</a>
+    <a href="#">프로필</a>
+    <a href="#">알림</a>
+    <a href="#">검색</a>
+    <a href="#">도움말</a>
+    <a href="#">즐겨찾기</a>
+  </div>
+  <!-- ----------------------------------------------------------- -->
+
+  <!-- 사이드 메뉴 톱니바퀴 -->
+  <div id="gear-mySidenav" class="gear-side-menu">
+    <a href="javascript:void(0)" class="gear-side-close-btn" onclick="closeNavGear()">&times;</a>
+    <a href="#">사용자 이름, 비밀번호 변경</a>
+    <a href="#">이메일 및 연락처 정보 수정</a>
+    <a href="#">이메일 알림, 푸시 알림 설정</a>
+    <a href="#">새로운 콘텐츠 업데이트 알림 설정</a>
+    <a href="#">인터페이스 언어 변경</a>
+    <a href="#">자막 언어 및 더빙 언어 선택</a>
+    <a href="#">공개 프로필 설정</a>
+    <a href="#">시청 기록 삭제 및 관리</a>
+    <a href="#">결제 정보 업데이트</a>
+    <a href="#">구독 플랜 변경 및 관리</a>
+    <a href="#">배경 이미지 및 색상 테마 선택</a>
+  </div>
+  <!-- ----------------------------------------------------------- -->
 
   <div class="main row">
     <!--왼쪽 메뉴를 감싸는 박스-->
@@ -45,13 +79,13 @@
       </div>
       <div class="menu-area__menu">
         <div class="menu-area__menu-btn">
-          <i class="fa-solid fa-house"></i>
+          <i class="fa-solid fa-house" id="house-icon"></i>
         </div>
         <div class="menu-area__menu-btn">
-          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-bars" class="hamburger-icon" onclick="openNavHam()"></i>
         </div>
         <div class="menu-area__menu-btn">
-          <i class="fa-solid fa-gear"></i>
+          <i class="fa-solid fa-gear" class="gear-icon" onclick="openNavGear()"></i>
         </div>
         <div class="menu-area__menu-btn">
           <i class="fa-solid fa-arrow-right-from-bracket" id="close-icon"></i>
@@ -356,6 +390,7 @@
     </script>
   <script src="yuju/movie.js"></script>
   <script src="yongmin/search.js"></script>
+  <script src="junseop/sidemenu.js"></script>
 </body>
 
 </html>

@@ -49,6 +49,9 @@ const search = async (event) => {
   localStorage.setItem("totalResults", totalResults);
   localStorage.setItem("currentPage", page);
   localStorage.setItem("query", query);
+
+  document.getElementById('suggestions').innerHTML = '';
+
   render(searchResultList);
   paginationRender();
 };

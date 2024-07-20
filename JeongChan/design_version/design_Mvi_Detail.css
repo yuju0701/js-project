@@ -365,3 +365,18 @@ body {
   background-color: transparent;
   border: none;
 }
+
+@media screen and (max-width: 935px) {
+  .col-6 {
+    width: 100%;
+  }
+
+  .recommend-board {
+    margin-top: 20px;
+    position: relative;
+  }
+
+  footer {
+    display: none;
+  }
+}
