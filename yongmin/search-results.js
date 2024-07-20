@@ -34,7 +34,6 @@ const search = async (event) => {
   event.preventDefault();
   const query = document.querySelector("#search-input__result").value;
   console.log(query); // 검색어 확인
-  let searchValue = document.getElementById("search-input__result").value;
 
   page = 1; // 새로운 검색 시 페이지 번호를 1로 초기화
   searchUrl.searchParams.set("query", query);
@@ -50,7 +49,6 @@ const search = async (event) => {
   localStorage.setItem("totalResults", totalResults);
   localStorage.setItem("currentPage", page);
   localStorage.setItem("query", query);
-  console.log(searchValue);
   render(searchResultList);
   paginationRender();
 };
@@ -129,8 +127,6 @@ document.addEventListener("DOMContentLoaded", () => {
     searchUrl.searchParams.set("query", storedQuery);
     searchUrl.searchParams.set("language", "ko-KR");
     searchUrl.searchParams.set("page", page);
-    document.getElementById("search-input__result").value;
-    console.log(searchValue);
     render(searchResultList);
     paginationRender();
   }
