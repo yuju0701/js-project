@@ -1,58 +1,55 @@
 .container {
-    position: relative;
-    z-index: 10;
+  z-index: 10;
 }
 
 .waves-animation {
   position: absolute;
-  top: 1200px;
-  width: 100%;
-  z-index: 1; 
-  pointer-events: none; 
-
+  bottom: 1%;
+  width: 98%;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .waves {
   width: 100%;
-  height: 15vh; 
+  height: 15vh;
   margin-bottom: -7px;
   min-height: 200px;
   max-height: 150px;
   border-radius: 0 0 100px 100px;
-
 }
 
 /* Animation */
-.parallax>use {
-    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
 }
 
-.parallax>use:nth-child(1) {
-    animation-delay: -2s;
-    animation-duration: 7s;
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
 }
 
-.parallax>use:nth-child(2) {
-    animation-delay: -3s;
-    animation-duration: 10s;
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
 }
 
-.parallax>use:nth-child(3) {
-    animation-delay: -4s;
-    animation-duration: 13s;
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
 }
 
-.parallax>use:nth-child(4) {
-    animation-delay: -5s;
-    animation-duration: 20s;
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
 }
 
 @keyframes move-forever {
-    0% {
-        transform: translate3d(-90px, 0, 0);
-    }
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
 
-    100% {
-        transform: translate3d(85px, 0, 0);
-    }
+  100% {
+    transform: translate3d(85px, 0, 0);
+  }
 }
