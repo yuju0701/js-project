@@ -1,16 +1,16 @@
 import API_TOKEN from "../config.js";
 
 let trailerUrl = "";
-let movieID = '653346'; // 1022789, 653346, 519182
+let movieID = "653346"; // 1022789, 653346, 519182
 
-const apiKey = 'c6e6f258ddf01e890ce7dc0db97ee5d6';  // 발급받은 API 키를 여기에 입력하세요
-const defaultImage = '../No img.png';  // 출연진 사진이 없을 경우 사용할 기본 이미지 경로.
+const apiKey = "c6e6f258ddf01e890ce7dc0db97ee5d6"; // 발급받은 API 키를 여기에 입력하세요
+const defaultImage = "../No img.png"; // 출연진 사진이 없을 경우 사용할 기본 이미지 경로.
 
 // URL에서 쿼리 파라미터를 추출하는 함수
 function getQueryParameter() {
   const urlParams = new URLSearchParams(window.location.search);
-  const paramValue = urlParams.get('movieID');
-  if (paramValue){
+  const paramValue = urlParams.get("movieID");
+  if (paramValue) {
     console.log(paramValue);
     movieID = paramValue;
   }
@@ -30,22 +30,27 @@ const pfxImage = "https://media.themoviedb.org/t/p/original";
 let tmp = ``;
 // https://media.themoviedb.org/t/p/w220_and_h330_face/lapab2EdLTL6srTus5ktgr64bqF.jpg
 
-
 const detailMovieSearch = async (ID) => {
   console.log(ID);
-  await fetch(`https://api.themoviedb.org/3/movie/${ID}?language=ko-KR`, options)
+  await fetch(
+    `https://api.themoviedb.org/3/movie/${ID}?language=ko-KR`,
+    options
+  )
     .then((response) => response.json())
     .then((response) => {
-      document.querySelector(".mvi-poster").style.backgroundImage = `url(${pfxImage}${response.poster_path}`;
-  
+      document.querySelector(
+        ".mvi-poster"
+      ).style.backgroundImage = `url(${pfxImage}${response.poster_path}`;
+
       // document.querySelector("#detail-background-img").src = `${pfxImage}${response.backdrop_path})`;
-  
+
       document.querySelector("#detail-title").textContent = response.title;
       document.querySelector(
         "#detail-release-date"
       ).textContent = `${response.release_date.substring(0, 4)}`;
-      document.querySelector(".detail-release").textContent = response.release_date;
-  
+      document.querySelector(".detail-release").textContent =
+        response.release_date;
+
       response.genres.forEach((element) => {
         tmp += `<a href="#" data-id="${element.id}">${element.name}</a>`;
       });
@@ -56,56 +61,56 @@ const detailMovieSearch = async (ID) => {
       );
       // document.querySelector(".detail-rating").textContent =
       //   response.vote_average.toString().substring(0,4);
-  
+
       // document.querySelector(".detail-tagline").textContent = response.tagline;
-  
-      document.querySelector("#detail-overview").textContent = response.overview;
-      
+
+      document.querySelector("#detail-overview").textContent =
+        response.overview;
 
       getYoutube(ID);
-  
+
       getSlideImage(ID);
 
-      fetchCredits(ID)
+      fetchCredits(ID);
 
       recommendation(ID);
-  
-  
+
       // document.querySelector('#detail-container').innerHTML = result;
     })
     .catch((err) => console.error(err));
-
-    
-  
-}
+};
 
 const getSlideImage = async (ID) => {
   document.querySelector(".detail-image-slider input").checked = true;
-  document.querySelectorAll('.detail-image-slider label img').forEach(async (img) => {
-    img.src = '';
-  });
+  document
+    .querySelectorAll(".detail-image-slider label img")
+    .forEach(async (img) => {
+      img.src = "";
+    });
   await fetch(`https://api.themoviedb.org/3/movie/${ID}/images?`, options)
-          .then(response => response.json())
-          .then(response => {
-            let j = 1;
-            for (let i = 0; i < response.posters.length; i++) {
-              if(response.posters[i]){
-                document.querySelector(`#slide${j} img`).src = `${pfxImage}${response.posters[i].file_path}`;
-                j++;
-                if (j >= 6) break;
-              }
-            }
-            while(j <= 5) {
-              document.querySelector(`#slide${j} img`).src = defaultImage;
-              j++;
-            }
-          })
-          .catch(err => console.error(err));
-}
+    .then((response) => response.json())
+    .then((response) => {
+      let j = 1;
+      for (let i = 0; i < response.posters.length; i++) {
+        if (response.posters[i]) {
+          document.querySelector(
+            `#slide${j} img`
+          ).src = `${pfxImage}${response.posters[i].file_path}`;
+          j++;
+          if (j >= 6) break;
+        }
+      }
+      while (j <= 5) {
+        document.querySelector(`#slide${j} img`).src = defaultImage;
+        j++;
+      }
+    })
+    .catch((err) => console.error(err));
+};
 
 const getYoutube = async (ID) => {
   let youtubeURL = document.querySelector(".detail-trailer iframe");
-  trailerUrl = '';
+  trailerUrl = "";
   await fetch(
     `https://api.themoviedb.org/3/movie/${ID}/videos?language=ko-KR`,
     options
@@ -119,18 +124,17 @@ const getYoutube = async (ID) => {
         ) {
           trailerUrl = `https://www.youtube.com/embed/${response.results[i].key}`;
           youtubeURL.src = trailerUrl;
-          document.querySelector('.trailer-button').style.display = 'inline';
+          document.querySelector(".trailer-button").style.display = "inline";
           break;
-        } 
-        
+        }
       }
       // 예고편이 없는 영화일 때
-      if(trailerUrl == '') {
-        document.querySelector('.trailer-button').style.display = 'none';
+      if (trailerUrl == "") {
+        document.querySelector(".trailer-button").style.display = "none";
       }
     })
     .catch((err) => console.error(err));
-}
+};
 
 function convertIntToTime(minutes) {
   let hours = Math.floor(minutes / 60); // 시간 계산
@@ -139,9 +143,11 @@ function convertIntToTime(minutes) {
 }
 
 // 예고편 영상 껐을 때
-document.querySelector("#videoModal").addEventListener("hide.bs.modal", function () {
-  document.querySelector("#videoModal iframe").src = "";
-});
+document
+  .querySelector("#videoModal")
+  .addEventListener("hide.bs.modal", function () {
+    document.querySelector("#videoModal iframe").src = "";
+  });
 
 // 예고편 영상 다시 켰을 떄
 document
@@ -149,13 +155,6 @@ document
   .addEventListener("show.bs.modal", function () {
     document.querySelector("#videoModal iframe").src = `${trailerUrl}`; // 원래 동영상 URL로
   });
-
-
-
-
-
-
-
 
 // /**
 //  * 사용자가 입력한 검색어를 기반으로 영화를 검색하는 함수.
@@ -196,7 +195,7 @@ document
 //     movieDiv.innerHTML = `
 //       <h2>${movie.title}</h2>
 //       ${movie.poster_path ? `<img src="https://image.tmdb.org/t/p/w200${movie.poster_path}" alt="${movie.title} 포스터">` : '<p>포스터 이미지가 없습니다.</p>'}
-      
+
 //       <div id="credits-${movie.id}"></div>
 //     `;
 //     resultsDiv.appendChild(movieDiv);
@@ -213,7 +212,9 @@ document
  */
 async function fetchCredits(ID) {
   try {
-    const creditsResponse = await fetch(`https://api.themoviedb.org/3/movie/${ID}/credits?api_key=${apiKey}&language=ko-KR`);
+    const creditsResponse = await fetch(
+      `https://api.themoviedb.org/3/movie/${ID}/credits?api_key=${apiKey}&language=ko-KR`
+    );
     if (!creditsResponse.ok) {
       throw new Error(`HTTP error! status: ${creditsResponse.status}`);
     }
@@ -222,7 +223,8 @@ async function fetchCredits(ID) {
   } catch (error) {
     console.error(`Error fetching credits for movie ${ID}:`, error);
     const creditsDiv = document.querySelector(`#results`);
-    creditsDiv.innerHTML = '<p>출연진 정보를 가져오는 도중 오류가 발생했습니다.</p>';
+    creditsDiv.innerHTML =
+      "<p>출연진 정보를 가져오는 도중 오류가 발생했습니다.</p>";
   }
 }
 
@@ -234,10 +236,10 @@ async function fetchCredits(ID) {
  */
 function displayCredits(cast) {
   const creditsDiv = document.querySelector(`#results`);
-  creditsDiv.innerHTML = '';  // 이전 출연진 결과를 지웁니다.
+  creditsDiv.innerHTML = ""; // 이전 출연진 결과를 지웁니다.
 
   if (cast.length === 0) {
-    creditsDiv.innerHTML = '<p>출연진 정보가 없습니다.</p>';  // 출연진 정보가 없을 경우 메시지를 표시.
+    creditsDiv.innerHTML = "<p>출연진 정보가 없습니다.</p>"; // 출연진 정보가 없을 경우 메시지를 표시.
     return;
   }
 
@@ -245,23 +247,33 @@ function displayCredits(cast) {
   const castHtml = `
     <p>출연진</p>
     <div class="cast-list slider">
-      ${cast.map(actor => `
+      ${cast
+        .map(
+          (actor) => `
         <div class="cast-item slide" draggable="false";>
           <div class="cast-information" draggable="false";>
-            <img src="${actor.profile_path ? `https://image.tmdb.org/t/p/w200${actor.profile_path}` : defaultImage}" 
+            <img src="${
+              actor.profile_path
+                ? `https://image.tmdb.org/t/p/w200${actor.profile_path}`
+                : defaultImage
+            }" 
                  alt="${actor.name} 사진 " 
                  onerror="this.onerror=null;this.src='${defaultImage}';" draggable="false";/>
             <div class="cast-details" draggable="false";>
               <p class="cast-name" draggable="false";>${actor.name}</p>
-              <p class="cast-character" draggable="false";>${actor.character}</p>
+              <p class="cast-character" draggable="false";>${
+                actor.character
+              }</p>
             </div>
           </div>
         </div>
-      `).join('')}
+      `
+        )
+        .join("")}
     </div>
   `;
 
-  creditsDiv.innerHTML = castHtml;  // 출연진 정보 목록을 한 번에 출력합니다.
+  creditsDiv.innerHTML = castHtml; // 출연진 정보 목록을 한 번에 출력합니다.
 
   detailSlider();
 }
@@ -271,44 +283,38 @@ function displayCredits(cast) {
  * @param {string} message - 표시할 오류 메시지.
  */
 function displayError(message) {
-  const resultsDiv = document.getElementById('results');
+  const resultsDiv = document.getElementById("results");
   resultsDiv.innerHTML = `<p>${message}</p>`;
 }
 
-
-
-
-
-
 function detailSlider() {
-  const slider = document.querySelector('.slider');
+  const slider = document.querySelector(".slider");
   let isDown = false;
   let startX;
   let scrollLeft;
 
-  slider.addEventListener('mousedown', function(e) {
+  slider.addEventListener("mousedown", function (e) {
     isDown = true;
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
   });
 
-  slider.addEventListener('mouseleave', function() {
+  slider.addEventListener("mouseleave", function () {
     isDown = false;
   });
 
-  slider.addEventListener('mouseup', function() {
+  slider.addEventListener("mouseup", function () {
     isDown = false;
   });
 
-  slider.addEventListener('mousemove', function(e) {
+  slider.addEventListener("mousemove", function (e) {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
     const walk = (x - startX) * 2; // 드래그 이동 거리에 따라 2배 속도로 슬라이드 이동
     slider.scrollLeft = scrollLeft - walk;
   });
-};
-
+}
 
 //추천 영화 데이터를 가져오는 함수
 const recommendation = async (id) => {
@@ -325,7 +331,7 @@ const recommendation = async (id) => {
 // 추천 영화 그려주기
 const recommendRender = (movies) => {
   let recommendBoard = document.querySelector(".recommend-board");
-  recommendBoard.innerHTML = ``;
+  recommendBoard.innerHTML = `<div>추천 영화</div><div></div>`;
 
   if (movies.length === 0) {
     recommendBoard.innerHTML = `<p>이 영화와 비슷한 영화가 없습니다.</p>`;
@@ -336,22 +342,25 @@ const recommendRender = (movies) => {
     const title = movie.title || movie.name;
 
     const recommendDiv = document.createElement("div");
-    if(poster){
-    recommendDiv.innerHTML = `
+    if (poster) {
+      recommendDiv.innerHTML = `
           <div class="recommend-container">
         
             <img src="./check.png" class="check-image" alt="check"/>
-            <img src="${poster?`https://image.tmdb.org/t/p/original${poster}`: defaultImage}" class="poster-image" alt="포스터">
+            <img src="${
+              poster
+                ? `https://image.tmdb.org/t/p/original${poster}`
+                : defaultImage
+            }" class="poster-image" alt="포스터">
               
           <div class="recommend__title-area">
               <p>${title}</p>
             </div>
           </div>
               `;
-      recommendDiv.addEventListener('click', function() {
-        this.querySelector('.check-image').style.opacity = 1;
+      recommendDiv.addEventListener("click", function () {
+        this.querySelector(".check-image").style.opacity = 1;
         detailMovieSearch(movie.id);
-
 
         let recommendDivPosition = this.offsetTop;
 
@@ -370,21 +379,20 @@ function smoothScrollTo(element, target, duration) {
   let startTime = performance.now();
 
   function animateScroll(currentTime) {
-      let timeElapsed = currentTime - startTime;
-      let progress = Math.min(timeElapsed / duration, 1);
-      element.scrollTop = start + change * easeInOutQuad(progress);
+    let timeElapsed = currentTime - startTime;
+    let progress = Math.min(timeElapsed / duration, 1);
+    element.scrollTop = start + change * easeInOutQuad(progress);
 
-      if (timeElapsed < duration) {
-          requestAnimationFrame(animateScroll);
-      }
+    if (timeElapsed < duration) {
+      requestAnimationFrame(animateScroll);
+    }
   }
 
   function easeInOutQuad(t) {
-      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
   }
 
   requestAnimationFrame(animateScroll);
 }
-
 
 detailMovieSearch(movieID);
