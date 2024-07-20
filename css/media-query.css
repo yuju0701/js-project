@@ -1,4 +1,4 @@
-@media screen and (min-width <=600) {
+@media screen and (max-width: 935px) {
   .menu-area {
     display: none;
   }
