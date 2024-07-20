@@ -6,6 +6,10 @@ const url = `https://api.themoviedb.org/3/api_key=${apiKey}&language=ko-KR`;
 
 const defaultImage = "./mingjeong/No img.png";
 
+//nav-var 애니메이션
+gsap.from(".navbar-brand", {duration: 1.5, opacity: 0, y: -50, ease: "back"});
+gsap.from(".navbar-nav li", {duration: 2, opacity: 0, y: 150, stagger: 0.25});
+
 // 개봉일 날짜 - 빼고 년월일 넣는 함수
 const formatDate = (dateString) => {
   const date = new Date(dateString);
@@ -49,7 +53,7 @@ const latestMovieRender = (movie) => {
 
             <img src="${
               movie.poster_path
-                ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
                 : defaultImage
             }" draggable="false" alt="${movie.title} 포스터" ;">
 
@@ -93,7 +97,7 @@ const popularMovieRender = (movie) => {
 
             <img src="${
               movie.poster_path
-                ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+                ? `https://image.tmdb.org/t/p/original${movie.poster_path}`
                 : defaultImage
             }" draggable="false" alt="${movie.title} 포스터";">
 
