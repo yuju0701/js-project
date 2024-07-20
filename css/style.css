@@ -168,6 +168,7 @@ nav ul li a:hover {
   max-width: 1285px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-radius: 10px;
+  z-index: 100;
 }
 
 .hero-content {
