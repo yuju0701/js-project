@@ -19,6 +19,7 @@ body {
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 8px;
   position: relative;
+  height: 100vh;
 }
 
 .mvi-poster::after {
@@ -363,3 +364,8 @@ body {
   transform: scale(1.1);
 }
 
+@media screen and (max-width: 935px) {
+  .col-6 {
+    width: 100%;
+  }
+}

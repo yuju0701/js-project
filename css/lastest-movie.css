@@ -26,7 +26,6 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto; /* 가로 스크롤을 허용 */
-  padding: 10px;
   gap: 13px; /* 영화 카드 사이의 간격 */
 }
 
