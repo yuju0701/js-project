@@ -11,7 +11,8 @@
     />
     <link rel="stylesheet" href="../../css/style.css" />
     <link rel="stylesheet" href="design_Mvi_Detail.css" type="text/css" />
-    <title>Document</title>
+    <link rel="icon" type="image/png" href="../../css/favicon.png">
+    <title>Detail page</title>
   </head>
 
   <body id="detail-background">
@@ -19,7 +20,7 @@
     <div class="top-nav">
       <div class="navbar-container">
         <a
-          href="index.html"
+          href="../../index.html"
           class="navbar-brand"
           aria-label="MOVIEFIX home page"
         >
@@ -79,9 +80,32 @@
               <div class="gap-2">
                 <button
                   data-bs-toggle="modal"
-                  data-bs-target="#videoModal"
+                  data-bs-target="#imageModal"
                   type="button"
                   class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                >
+                  <span class="sr-only"><b>Posters</b></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5 mr-2"
+                  >
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                  <span class="font-bold"><b>Posters</b></span>
+                </button>
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  type="button"
+                  class="trailer-button back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
                   <span class="sr-only"><b>Watch Trailer</b></span>
                   <svg
@@ -107,18 +131,8 @@
         </div>
       </div>
 
-
-    <div class="col-6 recommend-board">
-      
-
+      <div class="col-6 recommend-board"></div>
     </div>
-
-
-
-
-
-
-  </div>
 
     <!-- 동영상 -->
     <div
@@ -131,7 +145,7 @@
       <div class="modal-dialog modal-xl">
         <div class="modal-content detail-background-transparent">
           <div class="modal-header detail-background-transparent">
-            <h5 class="modal-title" id="exampleModalLabel">Trailer</h5>
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
             <button
               type="button"
               class="btn-close"
@@ -159,7 +173,7 @@
 
     <!-- 이미지 목록 -->
     <div
-      class="modal fade"
+      class="modal"
       id="imageModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
@@ -175,27 +189,27 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body p-0">
+          <div class="modal-body">
             <div class="ratio">
               <section id="slider" class="detail-image-slider">
-                <input type="radio" name="sliderImg" id="s1" />
+                <input type="radio" name="sliderImg" id="s1" checked />
                 <input type="radio" name="sliderImg" id="s2" />
-                <input type="radio" name="sliderImg" id="s3" checked />
+                <input type="radio" name="sliderImg" id="s3" />
                 <input type="radio" name="sliderImg" id="s4" />
                 <input type="radio" name="sliderImg" id="s5" />
-                <label for="s1" id="slide1">
+                <label for="s1" id="slide1" class="image-modal-label">
                   <img src="" height="100%" width="100%" />
                 </label>
-                <label for="s2" id="slide2">
+                <label for="s2" id="slide2" class="image-modal-label">
                   <img src="" height="100%" width="100%" />
                 </label>
-                <label for="s3" id="slide3">
+                <label for="s3" id="slide3" class="image-modal-label">
                   <img src="" height="100%" width="100%" />
                 </label>
-                <label for="s4" id="slide4">
+                <label for="s4" id="slide4" class="image-modal-label">
                   <img src="" height="100%" width="100%" />
                 </label>
-                <label for="s5" id="slide5">
+                <label for="s5" id="slide5" class="image-modal-label">
                   <img src="" height="100%" width="100%" />
                 </label>
               </section>

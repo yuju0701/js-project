@@ -1,7 +1,7 @@
 //추천 영화 데이터를 가져오는 함수
 const recommendation = async (id) => {
   const recommendUrl = new URL(
-    `https://api.themoviedb.org/3/movie/${id}/similar?language=ko-KR&page=1`
+    `https://api.themoviedb.org/3/movie/${id}/recommendations?language=ko-KR&page=1`
   );
   const response = await fetch(recommendUrl, options);
   const data = await response.json();

@@ -13,9 +13,14 @@
     integrity="sha512-gz4zvTevCibHmuCfP1sqL5fQoJssq3ELOVbOY/8dLWbgXpW3Sw7NbKVcE0gALJr3o5kAy1FV5J4Q3oVfEOexow=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css" />
+  <link rel="icon" type="image/png" href="css/favicon.png">
 </head>
 
-<body>
+<body> <!----------커버------->
+  <div id="cover">
+    <p>코딩알려주는 누나</p>
+    <button><img src="/css/Logo.png"></button>
+  </div>
   <!-- Top-navBer -->
   <div class="top-nav">
     <div class="navbar-container">
@@ -96,7 +101,7 @@
         <div class="hero-section">
           <div class="hero-content">
             <form id="search-form">
-              <input id="search-input" class="search-input" type="text" placeholder="검색어를 입력해주세요" />
+              <input id="search-input" class="search-input" type="text" placeholder="Please write here" />
               <!-- 연관 검색어 부분 -->
               <div id="suggestions"></div>
               <!--  -->
@@ -378,6 +383,7 @@
       </div>
     </div>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
