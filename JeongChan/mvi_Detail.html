@@ -18,165 +18,156 @@
       <img src="" id="detail-background-img" class="img-fit kenburns-left" />
       <div class="container">
         <div id="detail-container">
-        <div>
-          <button
-            type="button"
-            class="btn"
-            data-bs-toggle="modal"
-            data-bs-target="#imageModal"
-          >
-            <img src="" id="detail-poster-img" />
-          </button>
-          
-        </div>
-
-        <div>
           <div>
-            <a id="detail-title" class="detail-tag-a" href="#">제목</a>
-            <span id="detail-release-date" class="detail-release-date"
-              >날짜</span
+            <button
+              type="button"
+              class="btn"
+              data-bs-toggle="modal"
+              data-bs-target="#imageModal"
             >
+              <img src="" id="detail-poster-img" />
+            </button>
           </div>
 
           <div>
-            <span class="detail-certification">ALL</span>
-            <span class="detail-release">날짜</span>
-            <span>●</span>
-            <span class="detail-genres">장르</span>
-            <span>●</span>
-            <span class="detail-runtime">런타임</span>
-          </div>
+            <div>
+              <a id="detail-title" class="detail-tag-a" href="#">제목</a>
+              <span id="detail-release-date" class="detail-release-date"
+                >날짜</span
+              >
+            </div>
 
-          <div class="detail-rating">평점</div>
+            <div>
+              <span class="detail-certification">ALL</span>
+              <span class="detail-release">날짜</span>
+              <span>●</span>
+              <span class="detail-genres">장르</span>
+              <span>●</span>
+              <span class="detail-runtime">런타임</span>
+            </div>
 
-          <div class="detail-tagline">tagline</div>
+            <div class="detail-rating">평점</div>
 
-          <div><h4><b>개요</b></h4></div>
+            <div class="detail-tagline">tagline</div>
 
-          <div class="detail-overview">overview</div>
+            <div>
+              <h4><b>개요</b></h4>
+            </div>
 
-          <div class="container py-4">
-            <div class="gap-2">
+            <div class="detail-overview">overview</div>
 
-              <button data-bs-toggle="modal"
-              data-bs-target="#videoModal" type="button" class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
-                <span class="sr-only"><b>Watch Trailer</b></span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="h-5 w-5 mr-2"
+            <div class="container py-4">
+              <div class="gap-2">
+                <button
+                  data-bs-toggle="modal"
+                  data-bs-target="#videoModal"
+                  type="button"
+                  class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
                 >
-                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                </svg>
-                <span class="font-bold"><b>Watch Trailer</b></span>
-              </button>
-
-            </div>
-          </div>
-          <div
-            class="modal fade"
-            id="videoModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-xl">
-              <div class="modal-content detail-background-transparent">
-                <div class="modal-header detail-background-transparent">
-                  <h5 class="modal-title" id="exampleModalLabel">Trailer</h5>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body p-0">
-                  <div class="ratio ratio-16x9 detail-trailer">
-                    <iframe
-                      width="1259"
-                      height="708"
-                      src=""
-                      title=""
-                      frameborder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin"
-                      allowfullscreen
-                    ></iframe>
-                  </div>
-                </div>
+                  <span class="sr-only"><b>Watch Trailer</b></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="h-5 w-5 mr-2"
+                  >
+                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                  </svg>
+                  <span class="font-bold"><b>Watch Trailer</b></span>
+                </button>
               </div>
             </div>
-          </div>
-
-
-
-          <div
-            class="modal fade"
-            id="imageModal"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog modal-x1">
-              <div class="modal-content detail-background-transparent">
-                <div class="modal-header detail-background-transparent">
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body p-0">
-                  <div class="ratio">
-                    <section id="slider" class="detail-image-slider">
-                      <input type="radio" name="sliderImg" id="s1">
-                      <input type="radio" name="sliderImg" id="s2">
-                      <input type="radio" name="sliderImg" id="s3" checked>
-                      <input type="radio" name="sliderImg" id="s4">
-                      <input type="radio" name="sliderImg" id="s5">
-                      <label for="s1" id="slide1">
-                        <img src="" height="100%" width="100%">
-                      </label>
-                      <label for="s2" id="slide2">
-                        <img src="" height="100%" width="100%">
-                      </label>
-                      <label for="s3" id="slide3">
-                        <img src="" height="100%" width="100%">
-                      </label>
-                      <label for="s4" id="slide4">
-                        <img src="" height="100%" width="100%">
-                      </label>
-                      <label for="s5" id="slide5">
-                        <img src="" height="100%" width="100%">
-                      </label>
-                    </section>
+            <div
+              class="modal fade"
+              id="videoModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-xl">
+                <div class="modal-content detail-background-transparent">
+                  <div class="modal-header detail-background-transparent">
+                    <h5 class="modal-title" id="exampleModalLabel">Trailer</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body p-0">
+                    <div class="ratio ratio-16x9 detail-trailer">
+                      <iframe
+                        width="1259"
+                        height="708"
+                        src=""
+                        title=""
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-
-
+            <div
+              class="modal fade"
+              id="imageModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-x1">
+                <div class="modal-content detail-background-transparent">
+                  <div class="modal-header detail-background-transparent">
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body p-0">
+                    <div class="ratio">
+                      <section id="slider" class="detail-image-slider">
+                        <input type="radio" name="sliderImg" id="s1" />
+                        <input type="radio" name="sliderImg" id="s2" />
+                        <input type="radio" name="sliderImg" id="s3" checked />
+                        <input type="radio" name="sliderImg" id="s4" />
+                        <input type="radio" name="sliderImg" id="s5" />
+                        <label for="s1" id="slide1">
+                          <img src="" height="100%" width="100%" />
+                        </label>
+                        <label for="s2" id="slide2">
+                          <img src="" height="100%" width="100%" />
+                        </label>
+                        <label for="s3" id="slide3">
+                          <img src="" height="100%" width="100%" />
+                        </label>
+                        <label for="s4" id="slide4">
+                          <img src="" height="100%" width="100%" />
+                        </label>
+                        <label for="s5" id="slide5">
+                          <img src="" height="100%" width="100%" />
+                        </label>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-
-        
       </div>
-
-
-      </div>
-      
-      </div>
-      
     </div>
 
     <div class="container">

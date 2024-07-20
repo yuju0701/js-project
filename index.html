@@ -19,7 +19,7 @@
   <!-- Top-navBer -->
   <div class="top-nav">
     <div class="navbar-container">
-      <a href="#" class="navbar-brand" aria-label="MOVIEFIX home page">
+      <a href="index.html" class="navbar-brand" aria-label="MOVIEFIX home page">
         <img src="./minjeong/Logo.png" alt="MOVIEFIX Logo" />
         MOVIEFIX
       </a>
@@ -78,7 +78,7 @@
         </div>
         <!-------------------------- 배경 이미지 및 검색 부분 ---------------------------->
         <!---------------------네비게이션 바----------------------->
-        <nav>
+        <!--<nav>
           <div class="nav-left">
             <div class="logo">MOVIE</div>
             <ul>
@@ -100,14 +100,13 @@
               </li>
             </ul>
           </div>
-        </nav>
-        <!---------------------네비게이션 바----------------------->
+        </nav>-->
 
         <!----------------------캐러셀,예고편 컨테이너로 묶음----------------------->
         <!--------------------현재상영작 캐러셀---------------------->
         <div class="top-container">
           <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner main-video">
               <div class="carousel-item active" data-bs-interval="10000">
                 <div class="video-container">
                   <video class="d-block w-100" id="video1" controls>
@@ -278,7 +277,7 @@
         <!------------------------캐러셀,예고편 컨테이너로 묶음------------------------->
 
         <!-------------------------- 영화카드 부분-------------------------------->
-        <section class="container" draggable="false">
+        <section class="container movie-card" draggable="false">
           <button id="popular-Movie-btn" draggable="false">인기 영화</button><button id="latest-Movie-btn"
             draggable="false">최신 영화</button>
           <div class="popular-movie" draggable="false">
