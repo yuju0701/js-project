@@ -54,7 +54,7 @@ const search = async (event) => {
   window.location.href = "search-results.html";
 };
 
-document.querySelector("#search-form").addEventListener("submit", search);
+document.querySelector("#search-form").addEventListener("submit", search)
 
 // 연관 검색어 기능
 const MAX_RESULTS = 5; // 연관 검색어 개수
@@ -101,7 +101,7 @@ const displaySuggestions = (movies) => {
         const li = document.createElement('li');
         li.className = 'suggestion';
         li.textContent = movie.title;
-        li.addEventListener('click', function(event) {
+        li.addEventListener('mousedown', function(event) {
             document.getElementById('search-input').value = movie.title;
             container.innerHTML = ''; 
         });
