@@ -92,8 +92,8 @@ body {
 
 .screen {
   padding: 30px 0px;
-  height: 1300px;
-  width: 1500px;
+  height: 90%;
+  width: 100%;
   margin-top: 100px;
   background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
   backdrop-filter: blur(15px); /* Blur effect */
