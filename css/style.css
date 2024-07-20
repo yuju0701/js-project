@@ -78,9 +78,15 @@ body {
   transition: all 0.5s ease-in-out;
   border-radius: 50px;
 }
+
+.main {
+  margin: 0px 200px;
+}
 /*오른쪽 스크린 화면*/
 .screen-area {
   display: flex;
+  margin-left: 50px;
+  margin-top: 50px;
 }
 
 .screen {
@@ -349,7 +355,8 @@ nav ul li a:hover {
   margin-left: 30px;
 }
 
-#latest-Movie-btn, #popular-Movie-btn {
+#latest-Movie-btn,
+#popular-Movie-btn {
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -359,11 +366,13 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-#latest-Movie-btn:hover, #popular-Movie-btn:hover {
+#latest-Movie-btn:hover,
+#popular-Movie-btn:hover {
   background-color: #575757;
 }
 
-#latest-Movie-btn.active-btn, #popular-Movie-btn.active-btn {
+#latest-Movie-btn.active-btn,
+#popular-Movie-btn.active-btn {
   color: black;
   background-color: white;
 }

@@ -10,15 +10,28 @@
 .hidden {
   display: none;
 }
+
+#search-form__result {
+  position: relative;
+}
+
+#search-input__result {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
 /*메인 화면에서 검색창 가운데 정렬*/
 .search-result {
   display: flex;
   align-items: center;
-  margin: 10px 0px;
+  margin: 20px 0px;
   background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect */
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 20px;
 }
 
 #search-form {
@@ -38,6 +51,8 @@
 .search-result__img img {
   width: 200px;
   min-height: 154px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 /*영화 검색 중 내용 부분*/
@@ -71,26 +86,5 @@
 /*검색 결과 화면 search */
 #search-form__result {
   margin: 20px;
-}
-
-/* 연관 검색어 css */
-#suggestions {
-  margin-top: 10px;
-  padding: 0;
-  list-style-type: none;
-  text-align: left;
-  width: 100%;
-  position: absolute;
-  top: 30px;
-  background-color: rgba(73, 73, 73, 0.8);
-}
-
-.suggestion {
-  padding: 10px;
-  cursor: pointer;
-  border-bottom: 1px solid #ccc;
-}
-
-.suggestion:hover {
-  background-color: #f0f0f0;
+  margin-top: 120px;
 }
