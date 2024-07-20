@@ -16,11 +16,13 @@
 }
 
 body {
+  width: 100vw;
   font-family: "BMJUA";
   /*background-color: #f1efe9*/
   z-index: 0;
   background-image: url("https://wallpapers.com/images/featured/beach-sunset-bwvid0licus1pjda.jpg");
   /*https://images4.alphacoders.com/134/1348313.png*/
+  width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,6 +30,7 @@ body {
 
 .main {
   display: flex;
+  margin: 0px;
 }
 /* 왼쪽 메뉴 */
 .menu-area {
@@ -54,8 +57,8 @@ body {
 }
 
 .menu-area__menu {
-  width: 250px;
-  height: 800px;
+  width: 50%;
+  height: 60%;
   border-radius: 300px;
   background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
   backdrop-filter: blur(10px); /* Blur effect */
@@ -80,9 +83,6 @@ body {
   border-radius: 50px;
 }
 
-.main {
-  margin: 0px 200px;
-}
 /*오른쪽 스크린 화면*/
 .screen-area {
   display: flex;
@@ -391,3 +391,14 @@ nav ul li a:hover {
   scrollbar-width: none; /* Firefox */
   cursor: pointer;
 }
+
+/*@media screen and (max-width: 1000px) {
+  .menu-area {
+    display: none;
+  }
+
+  .top-container {
+    display: flex;
+    flex-direction: column;
+  }
+}*/
