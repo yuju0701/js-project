@@ -68,14 +68,14 @@
 }
 
 .MovieInfo img {
-  width: 300px;
-  height: 420px;
+  width: 10vw;
+  height: 20vh;
   border-radius: 5%;
   border-radius: 5%;
   border: 0.01px solid gray;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-.movie-card button {
-  margin: 50px 0px;
+#popular-Movie-btn {
+  margin: 1.5rem 0;
 }

@@ -45,14 +45,13 @@ body {
 }
 
 .menu-area__logo {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
   margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-area__logo img {
-  width: 220px;
+  width: 55%;
   border-radius: 50%;
 }
 
@@ -88,26 +87,27 @@ body {
   display: flex;
   margin-left: 50px;
   margin-top: 50px;
+  height: 90%;
+  position: relative;
 }
 
 .screen {
-  padding: 30px 0px;
-  height: 90%;
+  padding: 30px 20px;
+  height: 80%;
   width: 100%;
   margin-top: 100px;
   background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
   backdrop-filter: blur(15px); /* Blur effect */
   border-radius: 100px;
 }
-/* 네이게이션 */
+/* 네이게이션 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*background-color: #5e95f3;*/
   padding: 10px 20px;
-  width: 100%; /* 섹션 크기를 줄이기 */
-  margin: 0 auto; /* 가운데 정렬 */
+  width: 100%; 
+  margin: 0 auto; 
   border-radius: 10px;
 }
 
@@ -142,8 +142,8 @@ nav ul li a {
   font-size: 16px;
   padding: 10px 15px;
   transition: background-color 0.3s ease;
-  text-align: center; /* 텍스트를 센터로 고정 */
-}
+  text-align: center; /* 텍스트를 센터로 고정 
+} 
 
 nav ul li a:hover {
   background-color: rgba(255, 255, 255, 0.8);
@@ -152,12 +152,12 @@ nav ul li a:hover {
 }
 
 .nav-left {
-  margin-right: auto; /* 왼쪽 영역이 오른쪽 영역과 간격을 두도록 함 */
+  margin-right: auto; /* 왼쪽 영역이 오른쪽 영역과 간격을 두도록 함 
 }
 
 .nav-right {
-  margin-left: auto; /* 오른쪽 영역이 왼쪽 영역과 간격을 두도록 함 */
-}
+  margin-left: auto; /* 오른쪽 영역이 왼쪽 영역과 간격을 두도록 함 
+} */
 
 /*검색창*/
 .hero-section {
@@ -166,7 +166,6 @@ nav ul li a:hover {
   text-align: center;
   position: relative;
   width: 80%; /* 섹션 크기를 줄이기 */
-  max-width: 1285px; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   border-radius: 10px;
   z-index: 100;
@@ -224,13 +223,9 @@ nav ul li a:hover {
 
 /* 상영작 캐러셀 */
 .carousel {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.carousel-item {
-  height: 450px; /* 원하는 높이로 설정 */
-  border-radius: 25px;
+  max-width: 65%; /*페이지에서 보여지는 캐러셀 넓이 지정*/
+  max-height: 60%;
+  margin: 0 30px;
 }
 
 .carousel-item video {
@@ -245,7 +240,7 @@ nav ul li a:hover {
 .carousel-item.active,
 .carousel-item-next,
 .carousel-item-prev {
-  height: 450px; /* 원하는 높이로 설정 */
+  height: 70%; /* 원하는 높이로 설정 */
   border-radius: 30px;
   z-index: 3; /* 비디오를 캐러셀 컨트롤보다 앞에 위치 */
 }
@@ -285,7 +280,7 @@ nav ul li a:hover {
 /* 예고편 부분 */
 .preview-section {
   width: 25%; /* 섹션 크기를 줄이기 */
-  max-width: 600px; /* 최대 크기 설정 */
+  max-width: 100vh; /* 최대 크기 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   /*background-color: #ffffff;*/ /* 배경 색상 */
 }
@@ -295,10 +290,11 @@ nav ul li a:hover {
   flex-direction: column; /* 수직 정렬 */
   overflow-y: auto; /* 수직 스크롤 활성화 */
   overflow-x: hidden; /* 수평 스크롤 비활성화 */
-  height: 500px; /* 원하는 높이로 설정 */
+  height: 35svh; /* 원하는 높이로 설정 */
   /* 스크롤바 숨기기 */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  width: 100%;
 }
 
 .preview-item {
@@ -314,7 +310,7 @@ nav ul li a:hover {
 
 .preview-item iframe {
   width: 100%;
-  height: 200px;
+  height: 13vh;
   border: none;
 }
 
