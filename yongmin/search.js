@@ -41,8 +41,6 @@ const search = async (event) => {
   searchResultList = data.results;
   totalResults = data.total_results; // totalResults 값 설정
 
-  document.getElementById('suggestions').innerHTML = '';
-
   console.log(data);
   console.log(searchResultList);
 
@@ -54,8 +52,6 @@ const search = async (event) => {
 
   // 검색 결과 페이지로 이동
   window.location.href = "search-results.html";
-
-  document.getElementById('suggestions').innerHTML = '';
 };
 
 document.querySelector("#search-form").addEventListener("submit", search)
