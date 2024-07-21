@@ -26,7 +26,7 @@
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto; /* 가로 스크롤을 허용 */
-  gap: 13px; /* 영화 카드 사이의 간격 */
+  gap: 8%; /* 영화 카드 사이의 간격 */
 }
 
 #popular-movie-board::-webkit-scrollbar {
@@ -50,7 +50,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 50px;
 }
 
 .MovieInfo h1 {
