@@ -41,6 +41,7 @@ const detailMovieSearch = async (ID) => {
       // document.querySelector("#detail-background-img").src = `${pfxImage}${response.backdrop_path})`;
   
       document.querySelector("#detail-title").textContent = response.title;
+      document.title = response.title;
       document.querySelector(
         "#detail-release-date"
       ).textContent = `${response.release_date.substring(0, 4)}`;
