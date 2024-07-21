@@ -8,6 +8,7 @@
 @import url(wave-animation.css);
 @import url(recommend-move.css);
 @import url(hamburger.css);
+
 @font-face {
   font-family: "BMJUA";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
@@ -100,7 +101,7 @@ body {
   height: 100vh;
   padding-left: 200px;
   margin-right: 50px;
-  margin-top: 60px;
+  margin-top: 70px;
 }
 
 .menu-area__logo {
@@ -542,4 +543,18 @@ nav ul li a:hover {
   .MovieInfo img {
     width: 30vw;
   }
+}
+
+#cover p {
+  margin-top: 100px;
+  color: white;
+}
+
+#noona-img img {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  z-index: 50;
+  left: 24%;
+  top: 32%;
 }

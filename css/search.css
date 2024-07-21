@@ -98,3 +98,9 @@
   color: white;
   background-color: #333;
 }
+
+#no-result {
+  height: 50vh;
+  text-align: center;
+  font-size: 20px;
+}
