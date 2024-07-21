@@ -90,7 +90,6 @@
   color: white;
   font-size: 22px;
   font-weight: bold;
-  margin-left: 35%;
 
 .navbar-brand img {
   width: 50px;
@@ -111,7 +110,7 @@
 }
 
 .navbar-collapse {
-  margin-left: 15%;
+
 }
 
 .navbar-nav {
