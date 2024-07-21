@@ -7,7 +7,7 @@
 @import url(footer.css);
 @import url(wave-animation.css);
 @import url(recommend-move.css);
-
+@import url(hamburger.css);
 @font-face {
   font-family: "BMJUA";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
@@ -41,7 +41,7 @@ body {
   transform-origin: center;
   background-size: cover;
   background-position: center;
- /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
+  /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
 }
 
 #cover > button img {
