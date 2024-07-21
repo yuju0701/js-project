@@ -366,7 +366,7 @@ body {
   border: none;
 }
 
-@media screen and (max-width: 935px) {
+@media screen and (max-width: 1024px) {
   .col-6 {
     width: 100%;
   }
@@ -377,6 +377,31 @@ body {
   }
 
   footer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #detail-overview {
+    display: none;
+  }
+
+  #detail-title {
+    margin-top: 60px;
+  }
+
+  #detail-release-date {
+    margin-bottom: 30px;
+  }
+
+  #slider {
+    width: 90%;
+    height: 400px;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .detail-character {
     display: none;
   }
 }

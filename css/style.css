@@ -29,36 +29,47 @@ body {
   background-repeat: no-repeat;
 }
 /*========커버 시작=======*/
-#cover{
-  background-image:url(https://wallpapers.com/images/featured/beach-sunset-bwvid0licus1pjda.jpg);
-  position:fixed;
-  top:0; left:0; right:0; bottom:0;
-  color:rgb(255, 255, 255);
+#cover {
+  background-image: url(https://wallpapers.com/images/featured/beach-sunset-bwvid0licus1pjda.jpg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: rgb(255, 255, 255);
   z-index: 4000;
   transform-origin: center;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* 회전 중심을 중앙으로 설정 */
+ /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
 }
 
-#cover > p{
-  position:absolute;
-  top:25%; left:50%;
-  transform:translate(-50%,-50%);
-  font-size:3em;
-  font-weight:bold;
-  white-space:nowrap;
+#cover > button img {
+  width: 70%; /* 이미지 너비 */
+  height: 70%; /* 이미지 높이 */
+  border-radius: 50%; /* 이미지 모서리 둥글게 */
+}
+
+#cover > p {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3em;
+  font-weight: bold;
+  white-space: nowrap;
   z-index: 4000;
   color: rgb(31, 30, 30);
 }
 
-#cover > button{
-  color:rgb(0, 0, 0);
-  font-size:2em;
-  position:absolute;
-  top:60%; left:50%;
-  transform:translate(-50%,-50%);
-  cursor:pointer;
+#cover > button {
+  color: rgb(0, 0, 0);
+  font-size: 2em;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
   z-index: 4000;
   border-radius: 100%;
   background: none; /* 버튼 배경 없애기 */
@@ -67,14 +78,14 @@ body {
 
 #cover > button:hover {
   color: rgb(255, 255, 255); /* 호버 시 텍스트 색상 변경 */
-  
   transform: translate(-50%, -50%) scale(1.1); /* 호버 시 크기 확대 */
 }
 
-.first{
-  display:none;
+.first {
+  display: none;
 }
 /*========커버 끝=======*/
+
 .main {
   display: flex;
   margin: 0px;
@@ -89,16 +100,17 @@ body {
   height: 100vh;
   padding-left: 200px;
   margin-right: 50px;
+  margin-top: 70px;
 }
 
 .menu-area__logo {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
 
 .menu-area__logo img {
-  width: 55%;
+  width: 45%;
   border-radius: 50%;
 }
 
@@ -248,7 +260,7 @@ nav ul li a:hover {
 
 .search-button {
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 10%;
   border: none;
   border-radius: 5px;
   background-color: #333;
@@ -435,7 +447,7 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-@media screen and (max-width: 935px) {
+@media screen and (max-width: 1024px) {
   .top-nav li {
     display: none;
   }
@@ -508,5 +520,26 @@ nav ul li a:hover {
 
   .recommend-board {
     display: none;
+  }
+  .col-7 {
+    width: 100vw;
+  }
+
+  .MovieInfo img {
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    width: 100vw;
+  }
+
+  .col-7 {
+    width: 100vw;
+  }
+
+  .MovieInfo img {
+    width: 30vw;
   }
 }

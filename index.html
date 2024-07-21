@@ -22,8 +22,9 @@
     <button><img src="/css/Logo.png"></button>
   </div>
   <!-- Top-navBer -->
-  <div class="top-nav">
+  <!-- <div class="top-nav">
     <div class="navbar-container">
+      <i class="fas fa-bars hide icon-button" id="reaction-Ham-Btn" onclick="reaction_openNav()"></i>
       <a href="index.html" class="navbar-brand" aria-label="MOVIEFIX home page">
         <img src="./css/Logo.png" alt="MOVIEFIX Logo" />
         MOVIEFIX
@@ -39,8 +40,51 @@
         </ul>
       </div>
     </div>
-  </div>
+  </div> -->
   <!-- Top-navBer -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a href="index.html" class="navbar-brand" aria-label="MOVIEFIX home page">
+        <img src="./css/Logo.png" alt="MOVIEFIX Logo" />
+        MOVIEFIX
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Community</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Subscriptions</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!------------ 반응형 사이드 햄버거 ------------>
+  <div class="reaction-side-menu" id="reaction-mySidenav">
+    <button class="reaction-closeBtn" onclick="reaction_closeNav()">&times;</button>
+    <div class="reaction-menu-list" id="reaction-menu-list">
+      <a href="#">About</a>
+      <a href="#">Community</a>
+      <a href="#">Subscriptions</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  <!-- ---------------------------------------- -->
   
   <!-- 사이드 메뉴 햄버거 -->
   <div id="ham-mySidenav" class="ham-side-menu">
@@ -79,7 +123,7 @@
       </div>
       <div class="menu-area__menu">
         <div class="menu-area__menu-btn">
-          <i class="fa-solid fa-house" id="house-icon"></i>
+          <i class="fa-solid fa-house" id="house-icon" ></i>
         </div>
         <div class="menu-area__menu-btn">
           <i class="fa-solid fa-bars" class="hamburger-icon" onclick="openNavHam()"></i>
