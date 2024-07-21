@@ -13,3 +13,11 @@ function openNavGear() {
 function closeNavGear() {
     document.getElementById("gear-mySidenav").style.width = "0";
 }
+
+const reaction_openNav = () => {
+    document.getElementById("reaction-mySidenav").style.width = "250px";
+};
+  
+  const reaction_closeNav = () => {
+    document.getElementById("reaction-mySidenav").style.width = "0";
+};

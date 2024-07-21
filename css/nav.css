@@ -8,11 +8,15 @@
   position: absolute;
 }
 
+.bg-body-tertiary {
+  background-color: #0a0a0a42;
+}
+
 .navbar-container {
   height: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
 }
@@ -21,7 +25,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 22px;
   font-weight: bold;
   margin-right: 30px;
@@ -37,7 +41,7 @@
   margin: 0 auto;
 }
 
-.navbar-nav {
+#navbar-nav {
   display: flex;
   flex-direction: row;
   list-style: none;
@@ -113,7 +117,7 @@
 
 .navbar-nav a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 22px;
 }
 
