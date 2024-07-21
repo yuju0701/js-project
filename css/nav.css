@@ -8,10 +8,6 @@
   position: absolute;
 }
 
-.bg-body-tertiary {
-  background-color: #0a0a0a42;
-}
-
 .navbar-container {
   height: 100%;
   max-width: 1000px;
