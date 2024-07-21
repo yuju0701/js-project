@@ -150,9 +150,9 @@ body {
 .recommend-board {
   display: flex;
 }
-.recommend-board div {
+/* .recommend-board div {
   margin-right: 10px;
-}
+} */
 
 .recommend-board {
   height: 100%;

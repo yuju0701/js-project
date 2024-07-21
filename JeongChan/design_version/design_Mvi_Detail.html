@@ -1,280 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../../css/style.css" />
-    <link rel="stylesheet" href="design_Mvi_Detail.css" type="text/css" />
-    <link rel="icon" type="image/png" href="../../css/favicon.png">
-    <title>Detail page</title>
-  </head>
 
-  <body id="detail-background">
-    <!-- Top-navBer -->
-    <div class="top-nav">
-      <div class="navbar-container">
-        <a
-          href="../../index.html"
-          class="navbar-brand"
-          aria-label="MOVIEFIX home page"
-        >
-          <img src="../../css/Logo.png" alt="MOVIEFIX Logo" />
-          MOVIEFIX
-        </a>
-        <div class="navbarNav">
-          <ul class="navbar-nav">
-            <li><a href="#" aria-label="About page">About</a></li>
-            <li><a href="#" aria-label="Community page">Community</a></li>
-            <li>
-              <a href="#" aria-label="Subscriptions page">Subscriptions</a>
-            </li>
-            <li><a href="#" aria-label="Contact page">Contact</a></li>
-          </ul>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="design_Mvi_Detail.css" type="text/css" />
+  <link rel="icon" type="image/png" href="../../css/favicon.png">
+  <title>Detail page</title>
+</head>
+
+<body id="detail-background">
+  <!-- Top-navBer -->
+  <div class="top-nav">
+    <div class="navbar-container">
+      <a href="../../index.html" class="navbar-brand" aria-label="MOVIEFIX home page">
+        <img src="../../css/Logo.png" alt="MOVIEFIX Logo" />
+        MOVIEFIX
+      </a>
+      <div class="navbarNav">
+        <ul class="navbar-nav">
+          <li><a href="#" aria-label="About page">About</a></li>
+          <li><a href="#" aria-label="Community page">Community</a></li>
+          <li>
+            <a href="#" aria-label="Subscriptions page">Subscriptions</a>
+          </li>
+          <li><a href="#" aria-label="Contact page">Contact</a></li>
+        </ul>
       </div>
     </div>
-    <!-- Top-navBer -->
+  </div>
+  <!-- Top-navBer -->
 
-    <div class="detail-contents row">
-      <div class="col-6 mvi-poster">
-        <div class="detail-content">
-          <div id="detail-title" class="content-h2">Title</div>
-          <div id="detail-release-date" class="content-release">
-            Release Date
-          </div>
-          <div id="detail-overview" class="content-p">Description..</div>
-
-          <!-- 출연진 -->
-          <div class="container detail-character">
-            <div id="results">출연진</div>
-          </div>
-
-          <!-- 영화 정보 -->
-          <div class="row">
-            <div class="about-infor col-6">
-              <div class="row">
-                <div class="col-4 text-align-left text-color-red">
-                  Release date
-                </div>
-                <div class="col-4 text-align-left detail-release">날짜</div>
-                <div class="col-4"></div>
-              </div>
-              <div class="row">
-                <div class="col-4 text-align-left text-color-red">Genre</div>
-                <div class="col-8 text-align-left detail-genres">장르</div>
-              </div>
-              <div class="row">
-                <div class="col-4 text-align-left text-color-red">Runtime</div>
-                <div class="col-8 text-align-left detail-runtime">런타임</div>
-              </div>
-            </div>
-
-            <!-- 예고편 버튼 start -->
-            <div class="container col-6 py-4">
-              <div class="gap-2">
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  type="button"
-                  class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <span class="sr-only"><b>Posters</b></span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-5 w-5 mr-2"
-                  >
-                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                  </svg>
-                  <span class="font-bold"><b>Posters</b></span>
-                </button>
-                <button
-                  data-bs-toggle="modal"
-                  data-bs-target="#videoModal"
-                  type="button"
-                  class="trailer-button back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <span class="sr-only"><b>Watch Trailer</b></span>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="h-5 w-5 mr-2"
-                  >
-                    <polygon points="6 3 20 12 6 21 6 3"></polygon>
-                  </svg>
-                  <span class="font-bold"><b>Watch Trailer</b></span>
-                </button>
-              </div>
-            </div>
-            <!-- 예고편 버튼 end -->
-          </div>
+  <div class="detail-contents row">
+    <div class="col-6 mvi-poster">
+      <div class="detail-content">
+        <div id="detail-title" class="content-h2">Title</div>
+        <div id="detail-release-date" class="content-release">
+          Release Date
         </div>
-      </div>
+        <div id="detail-overview" class="content-p">Description..</div>
 
-      <div class="col-6 recommend-board"></div>
-    </div>
+        <!-- 출연진 -->
+        <div class="container detail-character">
+          <div id="results">출연진</div>
+        </div>
 
-    <!-- 동영상 -->
-    <div
-      class="modal fade"
-      id="videoModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-xl">
-        <div class="modal-content detail-background-transparent">
-          <div class="modal-header detail-background-transparent">
-            <h5 class="modal-title" id="exampleModalLabel"></h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body p-0">
-            <div class="ratio ratio-16x9 detail-trailer">
-              <iframe
-                width="1259"
-                height="708"
-                src=""
-                title=""
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
+        <!-- 영화 정보 -->
+        <div class="row">
+          <div class="about-infor col-6">
+            <div class="row">
+              <div class="col-4 text-align-left text-color-red">
+                Release date
+              </div>
+              <div class="col-4 text-align-left detail-release">날짜</div>
+              <div class="col-4"></div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-align-left text-color-red">Genre</div>
+              <div class="col-8 text-align-left detail-genres">장르</div>
+            </div>
+            <div class="row">
+              <div class="col-4 text-align-left text-color-red">Runtime</div>
+              <div class="col-8 text-align-left detail-runtime">런타임</div>
             </div>
           </div>
+
+          <!-- 예고편 버튼 start -->
+          <div class="container col-6 py-4">
+            <div class="gap-2">
+              <button data-bs-toggle="modal" data-bs-target="#imageModal" type="button"
+                class="back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <span class="sr-only"><b>Posters</b></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="h-5 w-5 mr-2">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+                <span class="font-bold"><b>Posters</b></span>
+              </button>
+              <button data-bs-toggle="modal" data-bs-target="#videoModal" type="button"
+                class="trailer-button back-trans inline-flex items-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                <span class="sr-only"><b>Watch Trailer</b></span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="h-5 w-5 mr-2">
+                  <polygon points="6 3 20 12 6 21 6 3"></polygon>
+                </svg>
+                <span class="font-bold"><b>Watch Trailer</b></span>
+              </button>
+            </div>
+          </div>
+          <!-- 예고편 버튼 end -->
         </div>
       </div>
     </div>
 
-    <!-- 이미지 목록 -->
-    <div
-      class="modal"
-      id="imageModal"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-x1">
-        <div class="modal-content detail-background-transparent">
-          <div class="modal-header detail-background-transparent">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="ratio">
-              <section id="slider" class="detail-image-slider">
-                <input type="radio" name="sliderImg" id="s1" checked />
-                <input type="radio" name="sliderImg" id="s2" />
-                <input type="radio" name="sliderImg" id="s3" />
-                <input type="radio" name="sliderImg" id="s4" />
-                <input type="radio" name="sliderImg" id="s5" />
-                <label for="s1" id="slide1" class="image-modal-label">
-                  <img src="" height="100%" width="100%" />
-                </label>
-                <label for="s2" id="slide2" class="image-modal-label">
-                  <img src="" height="100%" width="100%" />
-                </label>
-                <label for="s3" id="slide3" class="image-modal-label">
-                  <img src="" height="100%" width="100%" />
-                </label>
-                <label for="s4" id="slide4" class="image-modal-label">
-                  <img src="" height="100%" width="100%" />
-                </label>
-                <label for="s5" id="slide5" class="image-modal-label">
-                  <img src="" height="100%" width="100%" />
-                </label>
-              </section>
-            </div>
+    <div class="col-6 recommend-board"></div>
+  </div>
+
+  <!-- 동영상 -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+      <div class="modal-content detail-background-transparent">
+        <div class="modal-header detail-background-transparent">
+          <h5 class="modal-title" id="exampleModalLabel"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9 detail-trailer">
+            <iframe width="1259" height="708" src="" title="" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
-    <!--풋터-->
-    <footer>
-      <div class="footer-container">
-        <div class="footer-section">
-          <dl>
-            <dt>회사 정보</dt>
-            <dd>MOVIEFIX</dd>
-          </dl>
+  </div>
 
-          <dl>
-            <dt>사업자등록번호</dt>
-            <dd>155-55-56780</dd>
-          </dl>
-
-          <dl>
-            <dt>사업장 주소</dt>
-            <dd>서울특별시 종로구 종로40나길 55-5</dd>
-          </dl>
-
-          <dl>
-            <dt>고객센터</dt>
-            <dd>평일 09시~17시 (점심시간 13~14시)</dd>
-          </dl>
-
-          <dl>
-            <dt>전화번호(ARS)</dt>
-            <dd>1588-3434</dd>
-          </dl>
+  <!-- 이미지 목록 -->
+  <div class="modal" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-x1">
+      <div class="modal-content detail-background-transparent">
+        <div class="modal-header detail-background-transparent">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <div class="sns-area">
-          <a href="https://www.instagram.com/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://www.youtube.com/" target="_blank"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a href="https://www.facebook.com/" target="_blank"
-            ><i class="fab fa-facebook"></i
-          ></a>
-          <a href="https://twitter.com/" target="_blank"
-            ><i class="fab fa-twitter"></i
-          ></a>
+        <div class="modal-body">
+          <div class="ratio">
+            <section id="slider" class="detail-image-slider">
+              <input type="radio" name="sliderImg" id="s1" checked />
+              <input type="radio" name="sliderImg" id="s2" />
+              <input type="radio" name="sliderImg" id="s3" />
+              <input type="radio" name="sliderImg" id="s4" />
+              <input type="radio" name="sliderImg" id="s5" />
+              <label for="s1" id="slide1" class="image-modal-label">
+                <img src="" height="100%" width="100%" />
+              </label>
+              <label for="s2" id="slide2" class="image-modal-label">
+                <img src="" height="100%" width="100%" />
+              </label>
+              <label for="s3" id="slide3" class="image-modal-label">
+                <img src="" height="100%" width="100%" />
+              </label>
+              <label for="s4" id="slide4" class="image-modal-label">
+                <img src="" height="100%" width="100%" />
+              </label>
+              <label for="s5" id="slide5" class="image-modal-label">
+                <img src="" height="100%" width="100%" />
+              </label>
+            </section>
+          </div>
         </div>
       </div>
-    </footer>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://kit.fontawesome.com/fee9edab7c.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script>
+    </div>
+  </div>
+  <!--풋터-->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-section">
+        <dl>
+          <dt>회사 정보</dt>
+          <dd>MOVIEFIX</dd>
+        </dl>
 
-    <script src="design_Mvi_Detail.js" type="module"></script>
-  </body>
+        <dl>
+          <dt>사업자등록번호</dt>
+          <dd>155-55-56780</dd>
+        </dl>
+
+        <dl>
+          <dt>사업장 주소</dt>
+          <dd>서울특별시 종로구 종로40나길 55-5</dd>
+        </dl>
+
+        <dl>
+          <dt>고객센터</dt>
+          <dd>평일 09시~17시 (점심시간 13~14시)</dd>
+        </dl>
+
+        <dl>
+          <dt>전화번호(ARS)</dt>
+          <dd>1588-3434</dd>
+        </dl>
+      </div>
+
+      <div class="sns-area">
+        <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+  </script>
+  <script src="https://kit.fontawesome.com/fee9edab7c.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js"></script>
+
+  <script src="design_Mvi_Detail.js" type="module"></script>
+</body>
+
 </html>
