@@ -41,7 +41,13 @@ body {
   transform-origin: center;
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; /* 회전 중심을 중앙으로 설정 */
+ /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
+}
+
+#cover > button img {
+  width: 70%; /* 이미지 너비 */
+  height: 70%; /* 이미지 높이 */
+  border-radius: 50%; /* 이미지 모서리 둥글게 */
 }
 
 #cover > p {
@@ -72,7 +78,6 @@ body {
 
 #cover > button:hover {
   color: rgb(255, 255, 255); /* 호버 시 텍스트 색상 변경 */
-
   transform: translate(-50%, -50%) scale(1.1); /* 호버 시 크기 확대 */
 }
 
@@ -80,6 +85,7 @@ body {
   display: none;
 }
 /*========커버 끝=======*/
+
 .main {
   display: flex;
   margin: 0px;
@@ -94,16 +100,17 @@ body {
   height: 100vh;
   padding-left: 200px;
   margin-right: 50px;
+  margin-top: 70px;
 }
 
 .menu-area__logo {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
 }
 
 .menu-area__logo img {
-  width: 55%;
+  width: 45%;
   border-radius: 50%;
 }
 
