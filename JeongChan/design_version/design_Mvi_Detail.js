@@ -243,7 +243,7 @@ function displayCredits(cast) {
 
   // 출연진 정보
   const castHtml = `
-    <p>출연진</p>
+    <p class="detail-character">출연진</p>
     <div class="cast-list slider">
       ${cast.map(actor => `
         <div class="cast-item slide" draggable="false";>
