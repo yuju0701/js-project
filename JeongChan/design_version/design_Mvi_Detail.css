@@ -103,6 +103,7 @@ body {
   font-size: 1.2rem;
 }
 
+
 .mvi-poster::before {
   content: "";
   position: absolute;
