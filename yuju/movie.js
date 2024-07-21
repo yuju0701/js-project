@@ -280,3 +280,8 @@ function detailSlider(className) {
     slider.scrollLeft = scrollLeft - walk;
   });
 }
+
+const show = () => {
+  document.querySelector("#noona-img").classList.toggle("hidden");
+  document.querySelector("#noona-p").classList.toggle("hidden");
+};
