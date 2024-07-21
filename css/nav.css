@@ -37,6 +37,10 @@
   margin: 0 auto;
 }
 
+.bg-body-tertiary {
+  background-color: #0a0a0a42 !important;
+}
+
 #navbar-nav {
   display: flex;
   flex-direction: row;
@@ -99,6 +103,18 @@
   margin: 0 auto;
 }
 
+.container-fluid button {
+  color: white;
+}
+
+.navbar-toggler-icon {
+  color: white;
+}
+
+.navbar-collapse {
+  margin-left: 30%;
+}
+
 .navbar-nav {
   display: flex;
   flex-direction: row;
@@ -113,7 +129,7 @@
 
 .navbar-nav a {
   text-decoration: none;
-  color: black;
+  color: color;
   font-size: 22px;
 }
 
