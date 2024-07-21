@@ -90,6 +90,8 @@
   color: white;
   font-size: 22px;
   font-weight: bold;
+  margin-left: 35%;
+}
 
 .navbar-brand img {
   width: 50px;
@@ -109,13 +111,8 @@
   color: white;
 }
 
-.navbar-collapse {
-
-}
-
 .navbar-nav {
   display: flex;
-  flex-direction: row;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -137,4 +134,11 @@
 
 .navbar-nav a:active {
   color: #6b6a6a;
+}
+
+.navbarNav {
+  display: flex;
+}
+
+.navbar-collapse {
 }
