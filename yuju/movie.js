@@ -239,6 +239,9 @@ document.getElementById("close-icon").addEventListener("click", function () {
 });
 
 // house 버튼 클릭 시 페이지 새로고침
+document.querySelector("#house-icon").addEventListener("click", function () {
+  location.reload();
+});
 
 // 상세페이지 열기
 const openDetailPage = (movieID) => {
