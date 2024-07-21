@@ -1,0 +1,106 @@
+#search-result-background {
+  /* background: none;
+  background-color: #fcaf6f;*/
+}
+
+.main-container {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+#search-form__result {
+  position: relative;
+}
+
+#search-input__result {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+/*메인 화면에서 검색창 가운데 정렬*/
+.search-result {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  border-radius: 20px;
+}
+
+#search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-result__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+}
+
+.search-result__img img {
+  width: 200px;
+  min-height: 154px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+/*영화 검색 중 내용 부분*/
+.search-result__content {
+  padding: 20px;
+}
+
+.search-result__content-title {
+  display: flex;
+  align-items: center;
+}
+
+.search-result__content-title span {
+  color: rgb(76, 76, 76);
+}
+
+.search-result__content h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  font-weight: 800;
+}
+
+.search-result__content p:nth-child(2) {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+.search-result__content p:last-child {
+  line-height: 25px;
+}
+
+/*검색 결과 화면 search */
+#search-form__result {
+  margin: 20px;
+  margin-top: 120px;
+}
+
+/*페이지네이션*/
+.page-link {
+  color: #333;
+}
+
+.active > .page-link {
+  color: white;
+  background-color: #333;
+}
+
+#no-result {
+  height: 50vh;
+  text-align: center;
+  font-size: 20px;
+}

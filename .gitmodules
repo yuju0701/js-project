@@ -1,0 +1,3 @@
+[submodule "js-project"]
+    path = js-project
+    url = https://github.com/yuju0701/js-project.git
