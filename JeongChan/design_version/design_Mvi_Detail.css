@@ -370,13 +370,6 @@ body {
   background-color: transparent;
   border: none;
 }
-#detail-overview {
-  font-size: 25px;
-}
-
-#detail-title {
-  font-size: 3vw;
-}
 
 @media screen and (max-width: 1024px) {
   .col-6 {
