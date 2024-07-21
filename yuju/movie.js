@@ -7,7 +7,7 @@ const url = `https://api.themoviedb.org/3/api_key=${apiKey}&language=ko-KR`;
 const defaultImage = "./mingjeong/No img.png";
 
 //nav-var 애니메이션
-gsap.from(".navbar-brand", {duration: 3.5, opacity: 0, y: -50, ease: "power3.out"});
+gsap.from(".navbar-brand", {duration: 3.8, opacity: 0, y: -50, ease: "power3.out"});
 gsap.from(".navbar-nav li", {duration: 4, opacity: 0, y: 150, stagger: 0.35, ease: "power3.out"});
 
 
@@ -224,11 +224,6 @@ document.getElementById("close-icon").addEventListener("click", function () {
       "브라우저 보안 설정으로 인해 페이지를 닫을 수 없습니다. 창을 직접 닫아주세요."
     );
   }
-});
-
-// house 버튼 클릭 시 페이지 새로고침
-document.getElementById("house-icon").addEventListener("click", function () {
-  location.reload();
 });
 
 // 상세페이지 열기
