@@ -50,7 +50,7 @@ const search = async (event) => {
   localStorage.setItem("currentPage", page);
   localStorage.setItem("query", query);
 
-  document.getElementById('suggestions').innerHTML = '';
+  document.getElementById("suggestions").innerHTML = "";
 
   render(searchResultList);
   paginationRender();
@@ -61,7 +61,7 @@ const render = (movies) => {
   searchBoard.innerHTML = ``;
 
   if (movies.length === 0) {
-    searchBoard.innerHTML = `<p>검색 결과가 없습니다.</p>`;
+    searchBoard.innerHTML = `<p id="no-result">검색 결과가 없습니다.</p>`;
     return;
   }
 
@@ -143,11 +143,19 @@ const paginationRender = () => {
     lastPage = totalPages;
   }
 
+  console.log(totalPages);
+
+  if (totalPages == 0) {
+    document.querySelector(".pagination").innerHTML = ``;
+    return;
+  }
+
   const firstPage =
     lastPage - (groupSizes - 1) <= 0 ? 1 : lastPage - (groupSizes - 1);
 
   let paginationHTML = `
-    <li class="page-item" onclick="moveToPage(${1})">
+    <li class="page-item
+    " onclick="moveToPage(${1})">
       <a class="page-link" href="#"><<</a>
     </li>
     <li class="page-item" onclick="moveToPage(${page - 1})">
