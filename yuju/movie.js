@@ -160,7 +160,7 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   var carouselElement = document.querySelector("#carouselExampleInterval");
   var carousel = new bootstrap.Carousel(carouselElement, {
-    interval: 25000, // 캐러셀 자동 슬라이드 속도 설정 (25초)
+    interval: 5000, // 캐러셀 자동 슬라이드 속도 설정 (25초)
   });
 
   document.querySelectorAll(".carousel-item video").forEach((video) => {
