@@ -42,7 +42,7 @@ body {
   transform-origin: center;
   background-size: cover;
   background-position: center;
- /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
+  /* background-repeat: no-repeat;  회전 중심을 중앙으로 설정(회오리 애니메이션) */
 }
 
 #cover > button img {
@@ -543,4 +543,18 @@ nav ul li a:hover {
   .MovieInfo img {
     width: 30vw;
   }
+}
+
+#cover p {
+  margin-top: 100px;
+  color: white;
+}
+
+#noona-img img {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  z-index: 50;
+  left: 24%;
+  top: 32%;
 }
