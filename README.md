@@ -12,6 +12,9 @@
 
 </ul>
 
+# 배포주소
+- https://moviefix-1.netlify.app/
+
 ## Team
 |<img src="https://avatars.githubusercontent.com/u/124412354?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/108655272?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/155281581?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/156294352?v=4" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/163105974?v=4" width="150" height="150"/>|
 |:-:|:-:|:-:|:-:|:-:|
